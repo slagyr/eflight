@@ -172,14 +172,16 @@
 
   > li {
     margin-bottom: $spacing-unit;
-    //border-top: 1px dotted gray;
     min-height: 150px;
     clear: both;
-    //margin-bottom: 40px;
     padding: 10px;
     border: 1px solid #eaeaea;
     border-bottom: 4px solid #eaeaea;
     border-radius: 3px;
+
+    &:hover {
+      border-color: $brand-color;
+    }
 
     .post-image-wrap {
       position: relative;
@@ -233,8 +235,15 @@
   line-height: 36px;
 }
 
+.left-line-colored {
+  display: block;
+  width: 80px;
+  height: 2px;
+  background-color: $brand-color;
+}
+
 .post-meta {
-  font-size: $small-font-size;
+  //font-size: $small-font-size;
   color: $grey-color;
 }
 

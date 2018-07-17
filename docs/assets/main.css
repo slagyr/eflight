@@ -275,6 +275,8 @@ pre {
     border: 1px solid #eaeaea;
     border-bottom: 4px solid #eaeaea;
     border-radius: 3px; }
+    .post-list > li:hover {
+      border-color: #2a7ae2; }
     .post-list > li .post-image-wrap {
       position: relative;
       margin-bottom: 20px; }
@@ -313,8 +315,13 @@ pre {
 .more-link {
   line-height: 36px; }
 
+.left-line-colored {
+  display: block;
+  width: 80px;
+  height: 2px;
+  background-color: #2a7ae2; }
+
 .post-meta {
-  font-size: 14px;
   color: #828282; }
 
 .post-link {
