@@ -3,7 +3,7 @@
     <li>
 
         <div class="post-image-wrap">
-            <a href="/eflight{{ post.url | relative_url }}">
+            <a href="{{ post.url | relative_url }}">
                 <picture>
                     <source media="(max-width: 600px)" srcset="/eflight/img/{{post.date | date: '%Y-%m-%d'}}/1.jpg">
                     <img src="/eflight/img/{{post.date | date: '%Y-%m-%d'}}/1.jpg"/>
@@ -17,7 +17,7 @@
         </div>
         {{ post.content | strip_html | truncatewords:50 }}
         <p>
-            <a href="/eflight{{ post.url | relative_url }}" class="more-link">Read more …</a>
+            <a href="{{ post.url | relative_url }}" class="more-link">Read more …</a>
         </p>
     </li>
     {% endfor %}
