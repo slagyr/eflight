@@ -2,6 +2,7 @@
 layout: post
 title:  "Starting Point"
 date:   2018-07-16
+tags: ["Motor", "Controller", "Propeller", "Battery"]
 ---
 
 This is not really the starting point.  It's more of a mid-point.  Much has been done since I completed the OneX in January.  But I only recently decided to create this blog. Details about my activities will come in later blog entries, but what's on my mind now is batteries.

@@ -18,8 +18,8 @@ post = <<END
 ---
 layout: post
 title:  "#{title}"
-date:   #{date_str} 
-categories: eflight
+date:   #{date_str}
+tags: ["TBD"]
 ---
 
 Today was a great day!
