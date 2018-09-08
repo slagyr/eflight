@@ -42,7 +42,7 @@ A single 18650 cell has a nominal voltage of about ~3.6V.  Cell in series add th
 
 Cells in parallel add their current.  But the discharge current of cells varies with the chemestry of the cell.  I want the most energy for the least amount of weight.  One of the highest capacity cells is the Samsung 35E.  It has a max continuous discharge rate of **8A**, capacity of **3500 mAh**, and a weight of **50g**.   
  
-400 / 8 = 50 cells minimum to achieve 400A.  How many cells are needed to satisfy both Amps and Volts?  50 * 195 = 9750 cells. Yike!  That many cells would weight 488kg, 1073lbs.  Way too much!  Let's work this form the other side.
+400 / 8 = 50 cells minimum to achieve 400A.  How many cells are needed to satisfy both Amps and Volts?  50 * 195 = 9750 cells. Yike!  That many cells would weight 488kg, 1073lbs.  Way too much!  Let's work this from the other side.
 
 The weight allocation for batteries is about 250lbs, ~114kg.  That's 2280 cells.  400V should yield plenty of power.  That's 111 cells in series, allowing 20 parallel groups yielding 160 amps.  That'd be 65kW which is about 80HP, the same as the motor in the plane now.  I want more.  Maybe I need to reconsider the weight allocation.  Either way, I need to put all this in a spreadsheet.  
 

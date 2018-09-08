@@ -1,5 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://micahmartin.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://micahmartin.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://micahmartin.com/" rel="alternate" type="text/html" /><updated>2018-08-14T20:58:22-07:00</updated><id>http://micahmartin.com//</id><title type="html">Electric Airplane Adventures</title><subtitle>My adventures in building electric airplanes.
-</subtitle><author><name>Micah Martin</name></author><entry><title type="html">Coulomb Keeper</title><link href="http://micahmartin.com/2018/08/14/coulomb-keeper.html" rel="alternate" type="text/html" title="Coulomb Keeper" /><published>2018-08-14T00:00:00-07:00</published><updated>2018-08-14T00:00:00-07:00</updated><id>http://micahmartin.com/2018/08/14/coulomb-keeper</id><content type="html" xml:base="http://micahmartin.com/2018/08/14/coulomb-keeper.html">&lt;p&gt;I need to tell you all about 3D printing flying R/C planes, and I will.  It’s really cool!  But this blog is about a different type of 3D printed airplane.  It’s called the Coulomb Keeper.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://micahmartin.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://micahmartin.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://micahmartin.com/" rel="alternate" type="text/html" /><updated>2018-09-07T19:09:08-07:00</updated><id>http://micahmartin.com//</id><title type="html">Electric Airplane Adventures</title><subtitle>My adventures in building electric airplanes.
+</subtitle><author><name>Micah Martin</name></author><entry><title type="html">Batteries &amp;amp; Faraday First</title><link href="http://micahmartin.com/2018/09/07/batteries-faraday-first.html" rel="alternate" type="text/html" title="Batteries &amp; Faraday First" /><published>2018-09-07T00:00:00-07:00</published><updated>2018-09-07T00:00:00-07:00</updated><id>http://micahmartin.com/2018/09/07/batteries--faraday-first</id><content type="html" xml:base="http://micahmartin.com/2018/09/07/batteries-faraday-first.html">&lt;h4 id=&quot;batteries&quot;&gt;Batteries!&lt;/h4&gt;
+
+&lt;p&gt;They arrived today.  3,000 LG Chem MJ1 cells.  These are 18650 Li-ion cells with a nominal voltage of 3.6 V and a capacity of 3.5 Ah.  That’s 12.6 Wh in each cell. 37.8 kWh in the whole pile of batteries.  Sound like a lot?  Well it’s about the same amount energy as a gallon of gasoline.  A gallon of gas weights about 6 lbs, whereas that pile of batteries weights 330 lbs (150 kg).  And it’s not even enough batteries.  I’ll likely need to get about 2,000 more.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/eflight/img/2018-09-07/1.jpg&quot; alt=&quot;3000 MJ1s&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;detructive-battery-testing&quot;&gt;Detructive Battery Testing&lt;/h4&gt;
+
+&lt;p&gt;Next week I plan to start destroying some cells.  I’ll over charge them, drain them too quickly, heat them too much, whatever it takes to make them explode, melt down, of fail in some way.&lt;/p&gt;
+
+&lt;p&gt;Why would I be so wasteful and destructive?&lt;/p&gt;
+
+&lt;p&gt;For the most part, these cells are pretty safe.  The chance of a single cell failing catastrophically under normal use is quite low.  In pack of ~5,000 cells, the chance is 5,000 more likely.  For the sake of safety I need to assume that cells will fail during flight.  The battery packs I build need to accommodate failures without damaging their function and more importantly, preventing a chain reaction.  So I need a solid understanding of how these cells fail and what options I have to control the failures.&lt;/p&gt;
+
+&lt;h4 id=&quot;faraday-first&quot;&gt;Faraday First&lt;/h4&gt;
+
+&lt;p&gt;A couple weeks ago I finished modeling and printing &lt;a href=&quot;https://www.howfliesthealbatross.com/&quot;&gt;Phil’s (How Flies the Albatross)&lt;/a&gt; Faraday First plane. With this design Phil was considering high speed passenger transportation.  It’s got a blended wing shape, but more interesting are the control surfaces.  They are totally unconventional.  On the outer edge of the wings are what look like winglets, but they are rudder-like control surfaces.  They rotate about their vertical axis inducing roll.  There are no ailerons!  The ventral fin on the bottom also rotates, yielding yaw.  And come to think of it, I’m not sure what his plan is for pitch control.  Hmm.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/eflight/img/2018-09-07/2.jpg&quot; alt=&quot;FaradayFirst Flight&quot; /&gt;
+&lt;img src=&quot;/eflight/img/2018-09-07/3.jpg&quot; alt=&quot;Phil's Planes&quot; /&gt;&lt;/p&gt;</content><author><name>Micah Martin</name></author><category term="Battery" /><category term="3D Printing" /><summary type="html">Batteries!</summary></entry><entry><title type="html">Coulomb Keeper</title><link href="http://micahmartin.com/2018/08/14/coulomb-keeper.html" rel="alternate" type="text/html" title="Coulomb Keeper" /><published>2018-08-14T00:00:00-07:00</published><updated>2018-08-14T00:00:00-07:00</updated><id>http://micahmartin.com/2018/08/14/coulomb-keeper</id><content type="html" xml:base="http://micahmartin.com/2018/08/14/coulomb-keeper.html">&lt;p&gt;I need to tell you all about 3D printing flying R/C planes, and I will.  It’s really cool!  But this blog is about a different type of 3D printed airplane.  It’s called the Coulomb Keeper.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/eflight/img/2018-08-14/1.jpg&quot; alt=&quot;Flying&quot; /&gt;&lt;/p&gt;
 
@@ -151,7 +170,7 @@
 
 &lt;p&gt;Cells in parallel add their current.  But the discharge current of cells varies with the chemestry of the cell.  I want the most energy for the least amount of weight.  One of the highest capacity cells is the Samsung 35E.  It has a max continuous discharge rate of &lt;strong&gt;8A&lt;/strong&gt;, capacity of &lt;strong&gt;3500 mAh&lt;/strong&gt;, and a weight of &lt;strong&gt;50g&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;400 / 8 = 50 cells minimum to achieve 400A.  How many cells are needed to satisfy both Amps and Volts?  50 * 195 = 9750 cells. Yike!  That many cells would weight 488kg, 1073lbs.  Way too much!  Let’s work this form the other side.&lt;/p&gt;
+&lt;p&gt;400 / 8 = 50 cells minimum to achieve 400A.  How many cells are needed to satisfy both Amps and Volts?  50 * 195 = 9750 cells. Yike!  That many cells would weight 488kg, 1073lbs.  Way too much!  Let’s work this from the other side.&lt;/p&gt;
 
 &lt;p&gt;The weight allocation for batteries is about 250lbs, ~114kg.  That’s 2280 cells.  400V should yield plenty of power.  That’s 111 cells in series, allowing 20 parallel groups yielding 160 amps.  That’d be 65kW which is about 80HP, the same as the motor in the plane now.  I want more.  Maybe I need to reconsider the weight allocation.  Either way, I need to put all this in a spreadsheet.&lt;/p&gt;
 
