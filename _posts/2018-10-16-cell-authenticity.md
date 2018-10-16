@@ -9,7 +9,7 @@ Li-ion cells, especially 18650 cells, are ripe for fraud.  They are such a commo
 
 I want authentic cells going into my airplane.  So I've been testing the cells that I recently received.  These are LG Chem, MJ1 cells.  LG Chem publishes a product specification that describes the attributes and performance characteristics of their cells.  We can test our cells against these specifications.  I've been taking sample cells at random from the packing that they came in and testing them.  Here's a sample of my data.
 
-|ID|case|out of box V|weight (g)||charged voltage|capacity @0.5mA (mAh)|capacity @0.2C|	capacity @1C|% loss 0.2 - 1C|
+|ID|case|out of box V|weight (g)|charged voltage|capacity @0.5mA (mAh)|capacity @0.2C|	capacity @1C|% loss 0.2 - 1C|
 | :-: | :-: | :-:   | :-: | :-:   | :-:  | :-:  | :-:  | :-:   |
 | 1   | 1   | 3.599 | 47  | 4.139 | 3783 | 3410 | 3330 | 2.35% |
 | 2   | 1   | 3.599 | 47  | 4.144 | 3728 | 3430 |      |       |

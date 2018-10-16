@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://micahmartin.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://micahmartin.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://micahmartin.com/" rel="alternate" type="text/html" /><updated>2018-10-16T10:50:58-07:00</updated><id>http://micahmartin.com//</id><title type="html">Electric Airplane Adventures</title><subtitle>My adventures in building electric airplanes.
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://micahmartin.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://micahmartin.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://micahmartin.com/" rel="alternate" type="text/html" /><updated>2018-10-16T10:54:10-07:00</updated><id>http://micahmartin.com//</id><title type="html">Electric Airplane Adventures</title><subtitle>My adventures in building electric airplanes.
 </subtitle><author><name>Micah Martin</name></author><entry><title type="html">Cell Authenticity</title><link href="http://micahmartin.com/2018/10/16/cell-authenticity.html" rel="alternate" type="text/html" title="Cell Authenticity" /><published>2018-10-16T00:00:00-07:00</published><updated>2018-10-16T00:00:00-07:00</updated><id>http://micahmartin.com/2018/10/16/cell-authenticity</id><content type="html" xml:base="http://micahmartin.com/2018/10/16/cell-authenticity.html">&lt;p&gt;Li-ion cells, especially 18650 cells, are ripe for fraud.  They are such a commodity these days that sketchy distributors can make a handy profit by wrapping cheap low-quality cells in name brand skins and selling them for a premium.  They get creative.  Sometimes they’ll take low-end cells from a certain name brand, re-wrap them as high-end cells of the same brand and sell them.  Sometimes they’ll take an order of authentic cells and radnomly replace some of the cells with frauds.&lt;/p&gt;
 
 &lt;p&gt;I want authentic cells going into my airplane.  So I’ve been testing the cells that I recently received.  These are LG Chem, MJ1 cells.  LG Chem publishes a product specification that describes the attributes and performance characteristics of their cells.  We can test our cells against these specifications.  I’ve been taking sample cells at random from the packing that they came in and testing them.  Here’s a sample of my data.&lt;/p&gt;
@@ -10,12 +10,11 @@
       &lt;th style=&quot;text-align: center&quot;&gt;case&lt;/th&gt;
       &lt;th style=&quot;text-align: center&quot;&gt;out of box V&lt;/th&gt;
       &lt;th style=&quot;text-align: center&quot;&gt;weight (g)&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
       &lt;th style=&quot;text-align: center&quot;&gt;charged voltage&lt;/th&gt;
       &lt;th style=&quot;text-align: center&quot;&gt;capacity @0.5mA (mAh)&lt;/th&gt;
       &lt;th style=&quot;text-align: center&quot;&gt;capacity @0.2C&lt;/th&gt;
       &lt;th style=&quot;text-align: center&quot;&gt;capacity @1C&lt;/th&gt;
-      &lt;th&gt;% loss 0.2 - 1C&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;% loss 0.2 - 1C&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
@@ -29,7 +28,6 @@
       &lt;td style=&quot;text-align: center&quot;&gt;3410&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;3330&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;2.35%&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
@@ -41,7 +39,6 @@
       &lt;td style=&quot;text-align: center&quot;&gt;3430&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
@@ -53,7 +50,6 @@
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
@@ -65,7 +61,6 @@
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
@@ -77,7 +72,6 @@
       &lt;td style=&quot;text-align: center&quot;&gt;3410&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;3290&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;3.52%&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;6&lt;/td&gt;
@@ -89,7 +83,6 @@
       &lt;td style=&quot;text-align: center&quot;&gt;3410&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;7&lt;/td&gt;
@@ -101,7 +94,6 @@
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;8&lt;/td&gt;
@@ -113,7 +105,6 @@
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;9&lt;/td&gt;
@@ -125,7 +116,6 @@
       &lt;td style=&quot;text-align: center&quot;&gt;3400&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;3250&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;4.41%&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;10&lt;/td&gt;
@@ -137,7 +127,6 @@
       &lt;td style=&quot;text-align: center&quot;&gt;3460&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;11&lt;/td&gt;
@@ -149,7 +138,6 @@
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;12&lt;/td&gt;
@@ -161,7 +149,6 @@
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;13&lt;/td&gt;
@@ -173,7 +160,6 @@
       &lt;td style=&quot;text-align: center&quot;&gt;3410&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;3320&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;2.64%&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;14&lt;/td&gt;
@@ -185,7 +171,6 @@
       &lt;td style=&quot;text-align: center&quot;&gt;3410&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;15&lt;/td&gt;
@@ -197,7 +182,6 @@
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;16&lt;/td&gt;
@@ -209,7 +193,6 @@
       &lt;td style=&quot;text-align: center&quot;&gt;3310&lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
       &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
