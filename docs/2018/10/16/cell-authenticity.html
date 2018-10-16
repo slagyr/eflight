@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Cell Authenticity</title>
+  <meta name="description" content="Li-ion cells, especially 18650 cells, are ripe for fraud. They are such a commodity these days that sketchy distributors can make a handy profit by wrapping ...">
+
+  <link rel="stylesheet" href="/eflight/assets/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="canonical" href="http://micahmartin.com/2018/10/16/cell-authenticity.html">
+  <link rel="alternate" type="application/rss+xml" title="Electric Airplane Adventures" href="/feed.xml">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/eflight">Electric Airplane Adventures</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        <a class="page-link" href="/eflight/about">About</a>
+        <!---->
+          <!---->
+          <!--<a class="page-link" href="/about/">About</a>-->
+          <!---->
+        <!---->
+          <!---->
+        <!---->
+          <!---->
+        <!---->
+          <!---->
+        <!---->
+          <!---->
+          <!--<a class="page-link" href="/posts/page2/">Posts - page 2</a>-->
+          <!---->
+        <!---->
+          <!---->
+          <!--<a class="page-link" href="/posts/page2/">Posts - page 2</a>-->
+          <!---->
+        <!---->
+          <!---->
+        <!---->
+          <!---->
+        <!---->
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+
+  <nav aria-label="...">
+    <ul class="pager">
+      
+        <li class="previous"><a href="/eflight/2018/10/02/voltage-alarm.html"><span aria-hidden="true">&larr;</span> Voltage Alarm</a></li>
+      
+      
+    </ul>
+  </nav>
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Cell Authenticity</h1>
+    <div class="left-line-colored"></div>
+    <p class="post-meta">
+      <time datetime="2018-10-16T00:00:00-07:00" itemprop="datePublished">Oct 16, 2018</time>
+      
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Li-ion cells, especially 18650 cells, are ripe for fraud.  They are such a commodity these days that sketchy distributors can make a handy profit by wrapping cheap low-quality cells in name brand skins and selling them for a premium.  They get creative.  Sometimes they’ll take low-end cells from a certain name brand, re-wrap them as high-end cells of the same brand and sell them.  Sometimes they’ll take an order of authentic cells and radnomly replace some of the cells with frauds.</p>
+
+<p>I want authentic cells going into my airplane.  So I’ve been testing the cells that I recently received.  These are LG Chem, MJ1 cells.  LG Chem publishes a product specification that describes the attributes and performance characteristics of their cells.  We can test our cells against these specifications.  I’ve been taking sample cells at random from the packing that they came in and testing them.  Here’s a sample of my data.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">ID</th>
+      <th style="text-align: center">case</th>
+      <th style="text-align: center">out of box V</th>
+      <th style="text-align: center">weight (g)</th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center">charged voltage</th>
+      <th style="text-align: center">capacity @0.5mA (mAh)</th>
+      <th style="text-align: center">capacity @0.2C</th>
+      <th style="text-align: center">capacity @1C</th>
+      <th>% loss 0.2 - 1C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">3.599</td>
+      <td style="text-align: center">47</td>
+      <td style="text-align: center">4.139</td>
+      <td style="text-align: center">3783</td>
+      <td style="text-align: center">3410</td>
+      <td style="text-align: center">3330</td>
+      <td style="text-align: center">2.35%</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">3.599</td>
+      <td style="text-align: center">47</td>
+      <td style="text-align: center">4.144</td>
+      <td style="text-align: center">3728</td>
+      <td style="text-align: center">3430</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">3.599</td>
+      <td style="text-align: center">47</td>
+      <td style="text-align: center">4.142</td>
+      <td style="text-align: center">3864</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">3.599</td>
+      <td style="text-align: center">47</td>
+      <td style="text-align: center">4.141</td>
+      <td style="text-align: center">3719</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">3.601</td>
+      <td style="text-align: center">47</td>
+      <td style="text-align: center">4.139</td>
+      <td style="text-align: center">3753</td>
+      <td style="text-align: center">3410</td>
+      <td style="text-align: center">3290</td>
+      <td style="text-align: center">3.52%</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">3.601</td>
+      <td style="text-align: center">46</td>
+      <td style="text-align: center">4.139</td>
+      <td style="text-align: center">3701</td>
+      <td style="text-align: center">3410</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">7</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">3.601</td>
+      <td style="text-align: center">46</td>
+      <td style="text-align: center">4.145</td>
+      <td style="text-align: center">3828</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">8</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">3.600</td>
+      <td style="text-align: center">46</td>
+      <td style="text-align: center">4.146</td>
+      <td style="text-align: center">3701</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">9</td>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">3.599</td>
+      <td style="text-align: center">47</td>
+      <td style="text-align: center">4.150</td>
+      <td style="text-align: center">3778</td>
+      <td style="text-align: center">3400</td>
+      <td style="text-align: center">3250</td>
+      <td style="text-align: center">4.41%</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">10</td>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">3.599</td>
+      <td style="text-align: center">47</td>
+      <td style="text-align: center">4.155</td>
+      <td style="text-align: center">3722</td>
+      <td style="text-align: center">3460</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">11</td>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">3.599</td>
+      <td style="text-align: center">47</td>
+      <td style="text-align: center">4.150</td>
+      <td style="text-align: center">3853</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">12</td>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">3.599</td>
+      <td style="text-align: center">47</td>
+      <td style="text-align: center">4.150</td>
+      <td style="text-align: center">3702</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">13</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">3.599</td>
+      <td style="text-align: center">47</td>
+      <td style="text-align: center">4.141</td>
+      <td style="text-align: center">3771</td>
+      <td style="text-align: center">3410</td>
+      <td style="text-align: center">3320</td>
+      <td style="text-align: center">2.64%</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">14</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">3.600</td>
+      <td style="text-align: center">46</td>
+      <td style="text-align: center">4.142</td>
+      <td style="text-align: center">3709</td>
+      <td style="text-align: center">3410</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">15</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">3.599</td>
+      <td style="text-align: center">46</td>
+      <td style="text-align: center">4.145</td>
+      <td style="text-align: center">3865</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">16</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">3.599</td>
+      <td style="text-align: center">47</td>
+      <td style="text-align: center">4.147</td>
+      <td style="text-align: center">3696</td>
+      <td style="text-align: center">3310</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="appearance">Appearance</h5>
+
+<p>MJ1 cells are wrapped in green PVC, printed with identification, and “no defects such as deep scratch, rust, discoloration or leakage”.  Not only do all the cells match the specification, but they are beautifully smooth, clean, and shiny.</p>
+
+<h5 id="dimensions">Dimensions</h5>
+
+<p>The 18650 category of cells are so named because they are 18mm in diameter and 65mm in length.  MJ1’s are actually 18.4mm in diameter though.  The specifications allow a tolerance of +0.1/-0.3mm in diameter and +-0.2mm in length.  A quick measurement of a few cells confirms the dimensions, and with all the cells lined up in the packaging, it’s easy to confirm that they are all identical.</p>
+
+<h5 id="weight">Weight</h5>
+
+<p>The specs say each cell should weight a max of 49g.  My data indicates an average of roughly 46.5g.</p>
+
+<h5 id="nominal-voltage">Nominal Voltage</h5>
+
+<p>Specs: 3.635V.  This is not something I can simply measure.  It’s more of a calculation… the average voltage during a standard discharge.  But I can measure the voltage of the cells as I pull them out of the factory packaging.  The manufacture delivers the cells at a state of charge that is ideal for shipping.  They’re not full and they’re not empty.  And they happen to be quite close to the nominal voltage.  What’s remarkable is how consistent the voltages are: 3.600V += 0.001V.  Amazing!  That indicates a high quality manufacturing process.</p>
+
+<h5 id="maxmin-voltage">Max/Min Voltage</h5>
+
+<p>The specs give a Max cell voltage of 4.2V and a Min of 2.5V.  Now, these are not so much specifications as they are instructions for the user.  One could charge a cell above 4.2V and one could discharge a cell below 2.5V. But one really shouldn’t lest they desire exploding cells (worst case scenario).</p>
+
+<h5 id="capacity">Capacity</h5>
+
+<p>Specs:  Nominal: 3500 mAh.  Minimum: 3400 mAh.  And as I understand it, manufacturers are optimistic about their “nominal” capacity.  We should expect to see capacities just above the minimum.</p>
+
+<p>Up to this point, testing the authenticity of the cells has been easy.  Testing capacity required considerable more effort on my behalf.</p>
+
+<p>I have a <a href="https://www.amazon.com/Charger-Display-Intelligent-Battery-Batteries/dp/B071GKZB2G/ref=sr_1_24">cheap 18650 charger</a> that tests cell capacity.  As I <a href="/eflight/2018/10/02/voltage-alarm.html#testing-battery-authenticity">describe in the previous blog</a>, the device gave results averaging around 3750 mAh.  That’s higher then the specs say because the charger only runs at 0.5A where as the specs say a standard discharge rate is 0.2C (0.68A).</p>
+
+<p>The <a href="https://www.amazon.com/gp/product/B07F3NHHST/ref=oh_aui_search_detailpage?ie=UTF8&amp;psc=1">constant current load tester</a> that I got off Amazon allowed me to drain the batteries at a precise rate of my choosing.  So I gave it a shot.  See below.</p>
+
+<p><img src="/eflight/img/2018-10-16/2.jpg" alt="Initial Test Setup" /></p>
+
+<p>That test was performed on a cell that I identified as #16.  The resulting capacity at the “standard discharge rate” was 3310 mAh.  Too low! Well, after inspecting the setup, I attribute the error to the poor connections of that cell holder along with it’s skinny wires. We were experiencing voltage sag.</p>
+
+<p>I’ve found that spot welding Nickel strips onto the terminals of the cells gives a much better contact.  Nickel strips were welded to all the other test cells.</p>
+
+<h5 id="stopping-the-capacity-test">Stopping the Capacity Test</h5>
+
+<p>In <a href="/eflight/2018/10/02/voltage-alarm.html#testing-battery-authenticity">my last blog</a>, I tell the whole story about how I compromised the integrity of a few cells because the load tests doesn’t stop draining the batteries, and how I solved the problem by creating a voltage alarm circuit to disconnect the load tester when the minimum voltage is detected.</p>
+
+<p>The next photo below shows the combined setup with the load tester and the voltage alarm circuit.</p>
+
+<p><img src="/eflight/img/2018-10-02/5.jpg" alt="Final Test Setup" /></p>
+
+<p>This setup worked great.  It protected the cells and gave accurate results which match the specifications.</p>
+
+<h5 id="high-rate-discharge">High Rate Discharge</h5>
+
+<p>The standard discharge rate yields relatively low power levels.  When these cells are installed in an airplane, they will need to deliver significantly more power.  So I ran so capacity tests at higher discharge rates.</p>
+
+<p>At 1C (3.4A), the load tester barely got warm.  You can see that it has a nice fan surrounded by a hugh surface area of colling fins.  That’s a repurposed CPU cooling system for computers.  My little voltage alarm circuit however has no such cooling system.  The MOSFET, through which all the battery current passes, got scolding hot.  Only a few seconds in to the first 1C test I touched the MOSFET and sizzled my finger tip, just a bit.  After installing some tiny cooling fins and placing a USB fan over the top its temperature stabilized at about 110º Celsius.</p>
+
+<p>I was comforted to see that the loss of capacity due to higher rates of discharge was minimal.  Only about 4% capacity loss.</p>
+
+<p>The specs give a max discharge rate of 10A.  For this test I didn’t bother using the voltage alarm.  And I figured I had the patience to wait for the 20 minutes it would take to discharge the cell so I didn’t need it.  I took a thermal image of the cell under test and you can see that it got pretty warm too!  Over 50º C.  Li-ion cells are not perfect power supplies.  They contain internal impedance which causes them to warn up under high loads.</p>
+
+<p><img src="/eflight/img/2018-10-16/1.jpg" alt="10A Test" /></p>
+
+<h5 id="conclusion">Conclusion</h5>
+
+<p>The capacity testing is time consuming with each standard rate test taking 5 hours.  So although I am continuing with random testing, I have collected enough data at this point to claim with a high level of certainty that the cells I have are authentic.  -* thumbs up *-</p>
+
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Electric Airplane Adventures</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Micah Martin
+            
+            </li>
+            
+            <li><a href="mailto:micahmartin@gmail.com">micahmartin@gmail.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/slagyr"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">slagyr</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/slagyr"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">slagyr</span></a>
+
+          </li>
+          
+          <li><a href="/feed.xml">RSS feed</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>My adventures in building electric airplanes.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

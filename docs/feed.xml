@@ -1,5 +1,280 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://micahmartin.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://micahmartin.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://micahmartin.com/" rel="alternate" type="text/html" /><updated>2018-10-02T12:15:50-07:00</updated><id>http://micahmartin.com//</id><title type="html">Electric Airplane Adventures</title><subtitle>My adventures in building electric airplanes.
-</subtitle><author><name>Micah Martin</name></author><entry><title type="html">Voltage Alarm</title><link href="http://micahmartin.com/2018/10/02/voltage-alarm.html" rel="alternate" type="text/html" title="Voltage Alarm" /><published>2018-10-02T00:00:00-07:00</published><updated>2018-10-02T00:00:00-07:00</updated><id>http://micahmartin.com/2018/10/02/voltage-alarm</id><content type="html" xml:base="http://micahmartin.com/2018/10/02/voltage-alarm.html">&lt;p&gt;It’s been nearly a month since my last post!  Why?  Well, there’s been lots to learn.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://micahmartin.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://micahmartin.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://micahmartin.com/" rel="alternate" type="text/html" /><updated>2018-10-16T10:50:58-07:00</updated><id>http://micahmartin.com//</id><title type="html">Electric Airplane Adventures</title><subtitle>My adventures in building electric airplanes.
+</subtitle><author><name>Micah Martin</name></author><entry><title type="html">Cell Authenticity</title><link href="http://micahmartin.com/2018/10/16/cell-authenticity.html" rel="alternate" type="text/html" title="Cell Authenticity" /><published>2018-10-16T00:00:00-07:00</published><updated>2018-10-16T00:00:00-07:00</updated><id>http://micahmartin.com/2018/10/16/cell-authenticity</id><content type="html" xml:base="http://micahmartin.com/2018/10/16/cell-authenticity.html">&lt;p&gt;Li-ion cells, especially 18650 cells, are ripe for fraud.  They are such a commodity these days that sketchy distributors can make a handy profit by wrapping cheap low-quality cells in name brand skins and selling them for a premium.  They get creative.  Sometimes they’ll take low-end cells from a certain name brand, re-wrap them as high-end cells of the same brand and sell them.  Sometimes they’ll take an order of authentic cells and radnomly replace some of the cells with frauds.&lt;/p&gt;
+
+&lt;p&gt;I want authentic cells going into my airplane.  So I’ve been testing the cells that I recently received.  These are LG Chem, MJ1 cells.  LG Chem publishes a product specification that describes the attributes and performance characteristics of their cells.  We can test our cells against these specifications.  I’ve been taking sample cells at random from the packing that they came in and testing them.  Here’s a sample of my data.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;ID&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;case&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;out of box V&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;weight (g)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;charged voltage&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;capacity @0.5mA (mAh)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;capacity @0.2C&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;capacity @1C&lt;/th&gt;
+      &lt;th&gt;% loss 0.2 - 1C&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.599&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;47&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4.139&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3783&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3410&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3330&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2.35%&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.599&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;47&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4.144&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3728&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3430&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.599&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;47&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4.142&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3864&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.599&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;47&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4.141&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3719&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.601&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;47&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4.139&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3753&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3410&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3290&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.52%&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;6&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.601&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;46&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4.139&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3701&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3410&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;7&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.601&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;46&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4.145&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3828&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;8&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.600&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;46&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4.146&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3701&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;9&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.599&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;47&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4.150&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3778&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3400&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3250&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4.41%&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;10&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.599&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;47&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4.155&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3722&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3460&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;11&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.599&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;47&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4.150&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3853&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;12&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.599&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;47&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4.150&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3702&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;13&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.599&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;47&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4.141&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3771&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3410&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3320&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2.64%&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;14&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.600&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;46&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4.142&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3709&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3410&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;15&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.599&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;46&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4.145&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3865&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;16&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3.599&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;47&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4.147&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3696&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3310&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h5 id=&quot;appearance&quot;&gt;Appearance&lt;/h5&gt;
+
+&lt;p&gt;MJ1 cells are wrapped in green PVC, printed with identification, and “no defects such as deep scratch, rust, discoloration or leakage”.  Not only do all the cells match the specification, but they are beautifully smooth, clean, and shiny.&lt;/p&gt;
+
+&lt;h5 id=&quot;dimensions&quot;&gt;Dimensions&lt;/h5&gt;
+
+&lt;p&gt;The 18650 category of cells are so named because they are 18mm in diameter and 65mm in length.  MJ1’s are actually 18.4mm in diameter though.  The specifications allow a tolerance of +0.1/-0.3mm in diameter and +-0.2mm in length.  A quick measurement of a few cells confirms the dimensions, and with all the cells lined up in the packaging, it’s easy to confirm that they are all identical.&lt;/p&gt;
+
+&lt;h5 id=&quot;weight&quot;&gt;Weight&lt;/h5&gt;
+
+&lt;p&gt;The specs say each cell should weight a max of 49g.  My data indicates an average of roughly 46.5g.&lt;/p&gt;
+
+&lt;h5 id=&quot;nominal-voltage&quot;&gt;Nominal Voltage&lt;/h5&gt;
+
+&lt;p&gt;Specs: 3.635V.  This is not something I can simply measure.  It’s more of a calculation… the average voltage during a standard discharge.  But I can measure the voltage of the cells as I pull them out of the factory packaging.  The manufacture delivers the cells at a state of charge that is ideal for shipping.  They’re not full and they’re not empty.  And they happen to be quite close to the nominal voltage.  What’s remarkable is how consistent the voltages are: 3.600V += 0.001V.  Amazing!  That indicates a high quality manufacturing process.&lt;/p&gt;
+
+&lt;h5 id=&quot;maxmin-voltage&quot;&gt;Max/Min Voltage&lt;/h5&gt;
+
+&lt;p&gt;The specs give a Max cell voltage of 4.2V and a Min of 2.5V.  Now, these are not so much specifications as they are instructions for the user.  One could charge a cell above 4.2V and one could discharge a cell below 2.5V. But one really shouldn’t lest they desire exploding cells (worst case scenario).&lt;/p&gt;
+
+&lt;h5 id=&quot;capacity&quot;&gt;Capacity&lt;/h5&gt;
+
+&lt;p&gt;Specs:  Nominal: 3500 mAh.  Minimum: 3400 mAh.  And as I understand it, manufacturers are optimistic about their “nominal” capacity.  We should expect to see capacities just above the minimum.&lt;/p&gt;
+
+&lt;p&gt;Up to this point, testing the authenticity of the cells has been easy.  Testing capacity required considerable more effort on my behalf.&lt;/p&gt;
+
+&lt;p&gt;I have a &lt;a href=&quot;https://www.amazon.com/Charger-Display-Intelligent-Battery-Batteries/dp/B071GKZB2G/ref=sr_1_24&quot;&gt;cheap 18650 charger&lt;/a&gt; that tests cell capacity.  As I &lt;a href=&quot;/eflight/2018/10/02/voltage-alarm.html#testing-battery-authenticity&quot;&gt;describe in the previous blog&lt;/a&gt;, the device gave results averaging around 3750 mAh.  That’s higher then the specs say because the charger only runs at 0.5A where as the specs say a standard discharge rate is 0.2C (0.68A).&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://www.amazon.com/gp/product/B07F3NHHST/ref=oh_aui_search_detailpage?ie=UTF8&amp;amp;psc=1&quot;&gt;constant current load tester&lt;/a&gt; that I got off Amazon allowed me to drain the batteries at a precise rate of my choosing.  So I gave it a shot.  See below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/eflight/img/2018-10-16/2.jpg&quot; alt=&quot;Initial Test Setup&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;That test was performed on a cell that I identified as #16.  The resulting capacity at the “standard discharge rate” was 3310 mAh.  Too low! Well, after inspecting the setup, I attribute the error to the poor connections of that cell holder along with it’s skinny wires. We were experiencing voltage sag.&lt;/p&gt;
+
+&lt;p&gt;I’ve found that spot welding Nickel strips onto the terminals of the cells gives a much better contact.  Nickel strips were welded to all the other test cells.&lt;/p&gt;
+
+&lt;h5 id=&quot;stopping-the-capacity-test&quot;&gt;Stopping the Capacity Test&lt;/h5&gt;
+
+&lt;p&gt;In &lt;a href=&quot;/eflight/2018/10/02/voltage-alarm.html#testing-battery-authenticity&quot;&gt;my last blog&lt;/a&gt;, I tell the whole story about how I compromised the integrity of a few cells because the load tests doesn’t stop draining the batteries, and how I solved the problem by creating a voltage alarm circuit to disconnect the load tester when the minimum voltage is detected.&lt;/p&gt;
+
+&lt;p&gt;The next photo below shows the combined setup with the load tester and the voltage alarm circuit.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/eflight/img/2018-10-02/5.jpg&quot; alt=&quot;Final Test Setup&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This setup worked great.  It protected the cells and gave accurate results which match the specifications.&lt;/p&gt;
+
+&lt;h5 id=&quot;high-rate-discharge&quot;&gt;High Rate Discharge&lt;/h5&gt;
+
+&lt;p&gt;The standard discharge rate yields relatively low power levels.  When these cells are installed in an airplane, they will need to deliver significantly more power.  So I ran so capacity tests at higher discharge rates.&lt;/p&gt;
+
+&lt;p&gt;At 1C (3.4A), the load tester barely got warm.  You can see that it has a nice fan surrounded by a hugh surface area of colling fins.  That’s a repurposed CPU cooling system for computers.  My little voltage alarm circuit however has no such cooling system.  The MOSFET, through which all the battery current passes, got scolding hot.  Only a few seconds in to the first 1C test I touched the MOSFET and sizzled my finger tip, just a bit.  After installing some tiny cooling fins and placing a USB fan over the top its temperature stabilized at about 110º Celsius.&lt;/p&gt;
+
+&lt;p&gt;I was comforted to see that the loss of capacity due to higher rates of discharge was minimal.  Only about 4% capacity loss.&lt;/p&gt;
+
+&lt;p&gt;The specs give a max discharge rate of 10A.  For this test I didn’t bother using the voltage alarm.  And I figured I had the patience to wait for the 20 minutes it would take to discharge the cell so I didn’t need it.  I took a thermal image of the cell under test and you can see that it got pretty warm too!  Over 50º C.  Li-ion cells are not perfect power supplies.  They contain internal impedance which causes them to warn up under high loads.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/eflight/img/2018-10-16/1.jpg&quot; alt=&quot;10A Test&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h5&gt;
+
+&lt;p&gt;The capacity testing is time consuming with each standard rate test taking 5 hours.  So although I am continuing with random testing, I have collected enough data at this point to claim with a high level of certainty that the cells I have are authentic.  -* thumbs up *-&lt;/p&gt;</content><author><name>Micah Martin</name></author><category term="Battery" /><summary type="html">Li-ion cells, especially 18650 cells, are ripe for fraud.  They are such a commodity these days that sketchy distributors can make a handy profit by wrapping cheap low-quality cells in name brand skins and selling them for a premium.  They get creative.  Sometimes they’ll take low-end cells from a certain name brand, re-wrap them as high-end cells of the same brand and sell them.  Sometimes they’ll take an order of authentic cells and radnomly replace some of the cells with frauds.</summary></entry><entry><title type="html">Voltage Alarm</title><link href="http://micahmartin.com/2018/10/02/voltage-alarm.html" rel="alternate" type="text/html" title="Voltage Alarm" /><published>2018-10-02T00:00:00-07:00</published><updated>2018-10-02T00:00:00-07:00</updated><id>http://micahmartin.com/2018/10/02/voltage-alarm</id><content type="html" xml:base="http://micahmartin.com/2018/10/02/voltage-alarm.html">&lt;p&gt;It’s been nearly a month since my last post!  Why?  Well, there’s been lots to learn.&lt;/p&gt;
 
 &lt;h4 id=&quot;testing-battery-authenticity&quot;&gt;Testing Battery Authenticity&lt;/h4&gt;
 

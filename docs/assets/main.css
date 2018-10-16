@@ -142,6 +142,12 @@ pre {
   .icon > svg path {
     fill: #828282; }
 
+table, th, td {
+  border: 1px solid #dee2e6; }
+
+th {
+  border-bottom-width: 2px; }
+
 /**
  * Site header
  */
