@@ -1,5 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://micahmartin.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://micahmartin.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://micahmartin.com/" rel="alternate" type="text/html" /><updated>2018-10-16T10:54:10-07:00</updated><id>http://micahmartin.com//</id><title type="html">Electric Airplane Adventures</title><subtitle>My adventures in building electric airplanes.
-</subtitle><author><name>Micah Martin</name></author><entry><title type="html">Cell Authenticity</title><link href="http://micahmartin.com/2018/10/16/cell-authenticity.html" rel="alternate" type="text/html" title="Cell Authenticity" /><published>2018-10-16T00:00:00-07:00</published><updated>2018-10-16T00:00:00-07:00</updated><id>http://micahmartin.com/2018/10/16/cell-authenticity</id><content type="html" xml:base="http://micahmartin.com/2018/10/16/cell-authenticity.html">&lt;p&gt;Li-ion cells, especially 18650 cells, are ripe for fraud.  They are such a commodity these days that sketchy distributors can make a handy profit by wrapping cheap low-quality cells in name brand skins and selling them for a premium.  They get creative.  Sometimes they’ll take low-end cells from a certain name brand, re-wrap them as high-end cells of the same brand and sell them.  Sometimes they’ll take an order of authentic cells and radnomly replace some of the cells with frauds.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://micahmartin.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://micahmartin.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://micahmartin.com/" rel="alternate" type="text/html" /><updated>2019-02-08T20:48:49-08:00</updated><id>http://micahmartin.com//</id><title type="html">Electric Airplane Adventures</title><subtitle>My adventures in building electric airplanes.
+</subtitle><author><name>Micah Martin</name></author><entry><title type="html">Building a BMS</title><link href="http://micahmartin.com/2019/02/08/building-a-bms.html" rel="alternate" type="text/html" title="Building a BMS" /><published>2019-02-08T00:00:00-08:00</published><updated>2019-02-08T00:00:00-08:00</updated><id>http://micahmartin.com/2019/02/08/building-a-bms</id><content type="html" xml:base="http://micahmartin.com/2019/02/08/building-a-bms.html">&lt;p&gt;To summarize the 4 months since my last post:  I’ve been educating myself.  Primarily, my time has been spent learning how to build a BMS (Battery Management Sysytem).  And there was a lot for me to learn.&lt;/p&gt;
+
+&lt;p&gt;There were several attempts at a BMS that I’d like to share with you.&lt;/p&gt;
+
+&lt;h4 id=&quot;1-voltage-dividers&quot;&gt;1) Voltage Dividers&lt;/h4&gt;
+
+&lt;p&gt;With Chuck Studee’s guidance, the first problem we wanted tackle was measuring the voltage of all the cells.  Fortunately, the Arduino can sense voltage on one of its analog pins.  It’s often referred to as an ADC (Analog to Digital Converter).  It can measure up to 5V.&lt;/p&gt;
+
+&lt;p&gt;But here’s the rub.  The pack has 10 cells in series, delivering 42V from Pack- to Pack+ when fully charged.  There’s a lead from each cell’s + terminal and if we take a multimeter to each lead, from Pack-, we’ll read the following voltages down the line: 4.2, 8.4, 12.6, 16.8, 21, 25.2, 29.4, 33.6, 37.8, 42.   Assuming we use Pack- as ground for the Arduino (otherwise we have floating voltages: bad), we can read the 4.2V from the first cell, but all the rest are too high!&lt;/p&gt;
+
+&lt;p&gt;Well, we can use &lt;a href=&quot;https://learn.sparkfun.com/tutorials/voltage-dividers/all&quot;&gt;Voltage Dividers&lt;/a&gt; to solve that problem.  By connecting a voltage source to ground through two resistors in series, the voltage measured in between the two resistors will be divided according to this formula:  Vout = Vin * R2 / (R1 + R2).  So if we can divide our voltages by 10, then the max 42V turns into 4.2V.  Nice!  However, I didn’t have the resistors to divide by 10, so we divided by 11. R1 = 10k and R2 = 1k.&lt;/p&gt;
+
+&lt;p&gt;Easy, right?  Well, problem is now we’ve got 11 leads from the battery pack, and not enough ADC pins on the Arduino.  Ideally we use 1 ADC pin to measure all the voltages.  So we use a multiplexer to programmatically choose which lead we want to read from.  Except we need two multiplexers so that we can read the voltage between the leads on both sides of an individual cell.  This give more precision.  So then we need a Differential Amplifier.  The outputs from that are small, so we use an Instrumental Amplifier to make the recision easier to read on the ADC pin.&lt;/p&gt;
+
+&lt;p&gt;But there’s more:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;A Differential Amplifier is use to measure the difference between the two leads we multiplex into it.&lt;/li&gt;
+  &lt;li&gt;A Instrumental Amplifier is then needed to precisely multiple the smal voltages we get from the Diff Amp.&lt;/li&gt;
+  &lt;li&gt;A Linear Voltage Converter is used to feed the ADC’s reference voltage down to ~4.2V.&lt;/li&gt;
+  &lt;li&gt;A Buck Converter is used to reduce the pack’s voltage to a nice 7V that the Arduino can use.&lt;/li&gt;
+  &lt;li&gt;Diodes protect the cell leads&lt;/li&gt;
+  &lt;li&gt;A OLED screen displays the readings&lt;/li&gt;
+  &lt;li&gt;A push button Rotary Enccoder allows user inputs&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;AND… IT WORKED!  The circuit measured the voltage of each cell with relatively good accuracy.  Nice.  And then I thought “How do we balance cells now?”.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/eflight/img/2019-02-08/2.jpg&quot; alt=&quot;Voltage Dividers&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;2-flying-capacitor&quot;&gt;2) Flying Capacitor&lt;/h4&gt;
+
+&lt;p&gt;That first circuit allowed no means to balance cells. And along the way, I read about a “Flying Capacitor” technique I wanted to try.  The principle is that you connect both leads of a single cell to a capacitor, charge the capacitor, then disconnect.  The capacitor now holds the voltage of the cell.  You can then connect the capacitor to the ADC (and ground) to read the cell’s voltage.  Or, you could connect that charged capacitor up to a power resistor and effectively drain the cell.  Or, you could charge the capacitor with a full cell, and then connect it to a less full cell.  Either way, this Flying Capacitor solves the problem of voltage measuring and balancing.&lt;/p&gt;
+
+&lt;p&gt;The problem with this technique is that all the connections to the Flying Capacitor needs to be isolated.   If any of the components get connected to the capacitor at the same time, or if they happen to share a ground at some point, they fry.  I have a bin of burnt parts to prove it. To isolate the circuits I used a device called an Opto-Fet or Photo-MOS. It has four leads with an LED embedded in the chip.   When the LED is powered, the other two leads are connected.  Both sides of the opto-fet are totally isolated from each other.&lt;/p&gt;
+
+&lt;p&gt;With a fleet of these opto-fets, the circuit was able to measure voltage accurately, but the rate of balancing was abysmal.  It turns out that charging and discharging a capacitor over and over is not very efficient.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/eflight/img/2019-02-08/3.jpg&quot; alt=&quot;Optofets&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;3-bms-chip&quot;&gt;3) BMS Chip&lt;/h4&gt;
+
+&lt;p&gt;The BMS problem has been solved before.  Texas Instruments offers an amazing chip that does everything I was trying to do and more in a package smaller than a dime.  The BQ76940. I ordered an evaluation kit and started playing with it.  It worked great!  So I started to build a circuit on a breadboard using this chip.  I even designed a little PCB (printed circuit board) to adapt this surface mounted chip to 2.54mm pins.&lt;/p&gt;
+
+&lt;p&gt;My breadboard circuit was working somewhat, but only after wiring up almost all of the 44 pins on the BQ76940.  The circuit had become overwhelming for a breadboard.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/eflight/img/2019-02-08/4.jpg&quot; alt=&quot;BQ76940 attempt&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;4-pcb&quot;&gt;4) PCB&lt;/h4&gt;
+
+&lt;p&gt;Based on the forum posts, I felt like the only fool to try and wire up the BQ76940 on a breadboard.  I bit the bullet and started designing my own PCB.  This was a week long adventure and I feel good about the result.  The PCB is currently being fabricated and all the surface mounted chips are on order.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/eflight/img/2019-02-08/1.jpg&quot; alt=&quot;PCB&quot; /&gt;&lt;/p&gt;</content><author><name>Micah Martin</name></author><category term="Battery" /><summary type="html">To summarize the 4 months since my last post:  I’ve been educating myself.  Primarily, my time has been spent learning how to build a BMS (Battery Management Sysytem).  And there was a lot for me to learn.</summary></entry><entry><title type="html">Cell Authenticity</title><link href="http://micahmartin.com/2018/10/16/cell-authenticity.html" rel="alternate" type="text/html" title="Cell Authenticity" /><published>2018-10-16T00:00:00-07:00</published><updated>2018-10-16T00:00:00-07:00</updated><id>http://micahmartin.com/2018/10/16/cell-authenticity</id><content type="html" xml:base="http://micahmartin.com/2018/10/16/cell-authenticity.html">&lt;p&gt;Li-ion cells, especially 18650 cells, are ripe for fraud.  They are such a commodity these days that sketchy distributors can make a handy profit by wrapping cheap low-quality cells in name brand skins and selling them for a premium.  They get creative.  Sometimes they’ll take low-end cells from a certain name brand, re-wrap them as high-end cells of the same brand and sell them.  Sometimes they’ll take an order of authentic cells and radnomly replace some of the cells with frauds.&lt;/p&gt;
 
 &lt;p&gt;I want authentic cells going into my airplane.  So I’ve been testing the cells that I recently received.  These are LG Chem, MJ1 cells.  LG Chem publishes a product specification that describes the attributes and performance characteristics of their cells.  We can test our cells against these specifications.  I’ve been taking sample cells at random from the packing that they came in and testing them.  Here’s a sample of my data.&lt;/p&gt;
 
