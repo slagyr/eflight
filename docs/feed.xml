@@ -1,5 +1,49 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://micahmartin.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://micahmartin.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://micahmartin.com/" rel="alternate" type="text/html" /><updated>2019-02-08T20:48:49-08:00</updated><id>http://micahmartin.com//</id><title type="html">Electric Airplane Adventures</title><subtitle>My adventures in building electric airplanes.
-</subtitle><author><name>Micah Martin</name></author><entry><title type="html">Building a BMS</title><link href="http://micahmartin.com/2019/02/08/building-a-bms.html" rel="alternate" type="text/html" title="Building a BMS" /><published>2019-02-08T00:00:00-08:00</published><updated>2019-02-08T00:00:00-08:00</updated><id>http://micahmartin.com/2019/02/08/building-a-bms</id><content type="html" xml:base="http://micahmartin.com/2019/02/08/building-a-bms.html">&lt;p&gt;To summarize the 4 months since my last post:  I’ve been educating myself.  Primarily, my time has been spent learning how to build a BMS (Battery Management Sysytem).  And there was a lot for me to learn.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://micahmartin.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://micahmartin.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://micahmartin.com/" rel="alternate" type="text/html" /><updated>2019-08-28T22:16:59-07:00</updated><id>http://micahmartin.com//</id><title type="html">Electric Airplane Adventures</title><subtitle>My adventures in building electric airplanes.
+</subtitle><author><name>Micah Martin</name></author><entry><title type="html">eBike: Completed</title><link href="http://micahmartin.com/2019/08/28/ebike-completed.html" rel="alternate" type="text/html" title="eBike: Completed" /><published>2019-08-28T00:00:00-07:00</published><updated>2019-08-28T00:00:00-07:00</updated><id>http://micahmartin.com/2019/08/28/ebike-completed</id><content type="html" xml:base="http://micahmartin.com/2019/08/28/ebike-completed.html">&lt;p&gt;This electric bike is finished!  I know I haven’t mentioned it before, but it is a key learning step toward building the electric plane.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/eflight/img/2019-08-28/1.jpg&quot; alt=&quot;Final&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;back-story&quot;&gt;Back Story&lt;/h4&gt;
+
+&lt;p&gt;There a lot to talk about with this bike, and I haven’t blogged any of it.  In future blogs I’ll break it down and focus on lessons learned and interesting details.&lt;/p&gt;
+
+&lt;h4 id=&quot;ebike-features&quot;&gt;eBike Features&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.sikk.com/mens-ufo.html&quot;&gt;Sikk Fat Tire Cruise Bike&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;140 cell custom battery pack.  Two 14s5p groups working in parallel to produce 50.4V (nominal) at upto 100A&lt;/li&gt;
+  &lt;li&gt;2x “FlexBMS” Battery Management Systems.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.cnqsmotor.com/en/article_read/QS%20Motor%20205%2050H%20V3%20Motor%203000W%20Electric%20High%20Power%20Bike%20Spoke%20Hub%20Motor/259.html&quot;&gt;3kW BLDC Hub Motor&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/QSMOTOR-SVMC72200-controller-3000W-4000W-Controller/dp/B07DC2987H/ref=sr_1_1&quot;&gt;3-4kW DC Controller/Inverter&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.raspberrypi.org/products/raspberry-pi-4-model-b/&quot;&gt;Raspberry PI 4&lt;/a&gt; as central control of the system&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/GeeekPi-Monitor-Resistive-Interface-Raspberry/dp/B01L6O2NEE/ref=sr_1_3&quot;&gt;5” touch screen&lt;/a&gt; for user interface&lt;/li&gt;
+  &lt;li&gt;Headlights&lt;/li&gt;
+  &lt;li&gt;Tail lights with brake lights&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;performance&quot;&gt;Performance&lt;/h4&gt;
+
+&lt;h5 id=&quot;top-speed&quot;&gt;Top Speed:&lt;/h5&gt;
+
+&lt;p&gt;Officially, 20 MPH, because that’s the law for electric bikes.  Unofficially, I may have exceeded 40 MPH.&lt;/p&gt;
+
+&lt;h5 id=&quot;rangeendurance&quot;&gt;Range/Endurance:&lt;/h5&gt;
+
+&lt;p&gt;I estimate it’s more than 50 miles.  The bike was completed this morning and fully charge. Today I rode about 27 miles and the batteries are at about 70% of the top of their voltage range.  Exact watt hours are challenging to calculate.&lt;/p&gt;
+
+&lt;h5 id=&quot;manual-pedaling&quot;&gt;Manual Pedaling:&lt;/h5&gt;
+
+&lt;p&gt;Undesirable! There have been a few unfortunate test rides where I was miles from home and without electric propulsion.  Basically the bike broke for some reason or another and I had to pedal home.  The bike is heavy!  Maybe 100lbs.  By the time I’d get home, I’d be drenched in sweat.&lt;/p&gt;
+
+&lt;h4 id=&quot;versions&quot;&gt;Versions&lt;/h4&gt;
+
+&lt;p&gt;The picture above is the most recent version of the eBike, but it is not the first, or second.  Below is a picture of the first version.  It was a primitive configuration with a sad BDLC motor bolted to the frame and driving the rear wheel via an awkward chain.&lt;/p&gt;
+
+&lt;p&gt;Although version 1 was a blast to ride as you can see in the video as my good friend Skim gives it a go, the bike has improved a great deal since then.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/eflight/img/2019-08-28/2.jpg&quot; alt=&quot;First Version&quot; /&gt;&lt;/p&gt;
+
+&lt;iframe src=&quot;https://player.vimeo.com/video/356561354&quot; width=&quot;640&quot; height=&quot;360&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content><author><name>Micah Martin</name></author><category term="eBike" /><summary type="html">This electric bike is finished!  I know I haven’t mentioned it before, but it is a key learning step toward building the electric plane.</summary></entry><entry><title type="html">Building a BMS</title><link href="http://micahmartin.com/2019/02/08/building-a-bms.html" rel="alternate" type="text/html" title="Building a BMS" /><published>2019-02-08T00:00:00-07:00</published><updated>2019-02-08T00:00:00-07:00</updated><id>http://micahmartin.com/2019/02/08/building-a-bms</id><content type="html" xml:base="http://micahmartin.com/2019/02/08/building-a-bms.html">&lt;p&gt;To summarize the 4 months since my last post:  I’ve been educating myself.  Primarily, my time has been spent learning how to build a BMS (Battery Management Sysytem).  And there was a lot for me to learn.&lt;/p&gt;
 
 &lt;p&gt;There were several attempts at a BMS that I’d like to share with you.&lt;/p&gt;
 

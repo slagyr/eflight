@@ -1,3 +1,3 @@
 #!/bin/bash
 
-jekyll build -w -d docs
+bundle exec jekyll build -w -d docs
