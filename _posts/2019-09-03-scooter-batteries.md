@@ -20,16 +20,16 @@ My BMS can only handle 15 cells in series.  At 3.6V each, a single BMS can only 
 
 The MJ1 cells are rated for 10A max. To achieve 130A, 13 cells in parallel are needed.
 
-That's 2 packs of 10s13p configuration.  130 cells each.  260 cells total.  That's about 3.3kW of energy.
+That's 2 packs of 10s13p configuration.  130 cells each.  260 cells total.  That's about 3.3kWh of energy.
 
 
 #### Bus Bars
 
-130A is way more than I'd every dealt with before.  The skateboard was a 30A system and I had to stack nickel strips to safely handle that meager current.  Stacking enough nickel strips to handle 130A seemed like a shoddy solution.  Instead, I headed over to the local metal supply store and purchased some 6mm thick copper.  
+130A is way more than I'd every dealt with before.  The skateboard was a 30A system and I had to stack nickel strips to safely handle that meager current.  Stacking enough nickel strips to handle 130A seemed like a shoddy solution.  Instead, I headed over to the local metal supply store and purchased some 6mm thick copper sheet metal.  
 
-In Fusion 360, I designed the packs along with bus bars to connect the cells in the 10s13p configuration.  The question is, "How am I gonna cut that thick copper into the detailed CAD shapes?"
+In Fusion 360, I modeled the packs along with bus bars to connect the cells in the 10s13p configuration.  The question was, "How am I gonna cut that thick copper into the detailed CAD shapes?"
 
-I called a few machine shops and drove my copper over.  The guys at [SteelCrest](https://www.steelcrestonline.com/) were great!  They welcomed my in and conveniently cut my parts on the spot with their fiber laser cutter.  What a beast of a machine!  Check out the video below.
+I called a few machine shops and drove my copper over.  The guys at [SteelCrest](https://www.steelcrestonline.com/) were great!  They welcomed my in and conveniently cut my parts on the spot with their fiber laser cutter.  What a beast of a machine!  Check out the video below while my copper parts are laset cut.
 
 <iframe src="https://player.vimeo.com/video/357714358" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
     
@@ -41,7 +41,7 @@ Here's the freshly cut bus bars fitting perfectly in the 3D printed cases I made
 
 As it turns out, copper was not the best choice of material for the bus bars.  Why?  Because nickel doesn't weld to copper, at least not with the spot welder I have.  Nickel is needed to connect the individual cells.  
 
-I ended up plating the copper with solder.  Spot welding the nickel to the solder did work, kinda.  In the end I reinforced the spot welds with some solder welds.  The whole process made for lots of extra work.  But it should easily handle the 130A and then some!
+I ended up plating the copper with solder.  Spot welding the nickel to the solder did work, kinda.  In the end I reinforced the spot welds with some solder welds (only on the bus bars so as not to heat the cells).  The whole process made for lots of extra work.  But it should easily handle the 130A and then some!
 
 ![Pack Nearly Complete](/eflight/img/2019-09-03/3.jpg)
 
@@ -63,26 +63,26 @@ This is the type of problem that cell-level fuses would have prevented.
 #### Accidental Arc Welding
 
 
-We wired up the BMS, connected ground to the scooter's steele chassis, and then there was just the positive lead to connect.  Justin's fiance Ela (who is now is wife) just arrived and I remarked to them, "This is where it get's interesting."  In my experience, motor controllers have beefy capacitors and when you close the circuit, there's an frightening arc and glowing electrons.
+We wired up the BMS, connected ground to the scooter's steele chassis, and then there was just the positive lead to connect.  Justin's fiance Ela (who is now is wife) just arrived and I remarked to them, "This is where it get's interesting."  In my experience, motor controllers have beefy capacitors and when you close the circuit, there's an frightening arc of glowing electrons.
 
 At arm's length I gingerly touched the positive lead of the controller to the corresponding lead on the BMS expecting sparks.  But nothing!  "Cool!", I said as I relaxed, not realizing that my uninsulated connector was inches from touching the chassis.  That is until it did touch.  
 
-72 volts with virtually no impedance except the steel chassis.  SPARKS EVERYWHERE!!!  Blinding light!  Crackling thunder!  I jumped back, as did Justin and Ela.  Thank goodness the cable was loose and the circuit opened once I let go of it.  The steel tubing had melted and coin sized gouge was left behind.  Not enough structural damage warrant repair though.         
+72 volts with virtually no impedance except the steel chassis.  SPARKS EVERYWHERE!!!  Blinding light!  Crackling thunder!  I jumped back, as did Justin and Ela.  Thank goodness the cable was loose and the circuit opened once I let go of it.  The steel tubing had melted and a coin sized gouge was left behind.  Not enough structural damage to warrant repair though.         
 
 #### Results
 
 ##### The Good News
 
-The packs worked!  Just was back on the road again, cruising the streets of Austin.  
+The packs worked!  Justin was on the road again, cruising the streets of Austin.  
 
 Before, Justin was lucky to get 20 miles on the scooter before a recharge was needed.   With the new packs, he estimates he could go 100 miles before needing to charge.
 
 ##### The Bad News
 
-1) The original charger that was built into the scooter didn't work.  We had to cut some CAN wires during the replacement and these provided some needed communications that we were not going to reverse-engineer.  Justin also lost his build-in batter gauge because of these cut wires, but I built him a separate display to go along with the packs.   
+1) The original charger that was built into the scooter didn't work.  We had to cut some CAN wires during the replacement and these provided important communications that we were not going to reverse-engineer.  Justin also lost his built-in battery gauge because of these cut wires, but I built him a separate display to go along with the packs.   
 
-2) The BMS software needed tweaking.  It's not until Justin is on the road and the BMS's cut off power that we realize what the problem is.  When it happens, Justin has to pull over and restart the bike, although he's gotten good at hot starting it while on the roll.  So the debugging process is a bit pain-staking.
+2) The BMS software needed tweaking.  For various reasons, while Justin is riding, the BMSs' safety measures kick in and cut power.  When it happens, Justin has to pull over and restart the bike, although he's gotten pretty good at hot-starting it while on the roll.  It's not until it happens that we can analyse the logs and see why it happens.  So the debugging process is a bit pain-staking.
 
-3) Once of the BMS units got fried.  The existing system is a black box.  We don't know exactly how it works or why it does the things it does.  At one point it produces a voltage spike that destroyed some electronics.  A new BMS was built and we'll have to see if we can prevent that from happening again.
+3) One of the BMS units got fried.  The speed controller is a black box.  We don't know exactly how it works or why it does the things it does.  At one point it produced a voltage spike that destroyed some electronics.  A new BMS was built and we'll have to see if we can prevent that from happening again.
 
 All-in-all, a good learning experience. 
