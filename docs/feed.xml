@@ -1,5 +1,97 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://micahmartin.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://micahmartin.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://micahmartin.com/" rel="alternate" type="text/html" /><updated>2019-09-04T15:11:39-07:00</updated><id>http://micahmartin.com//</id><title type="html">Electric Airplane Adventures</title><subtitle>My adventures in building electric airplanes.
-</subtitle><author><name>Micah Martin</name></author><entry><title type="html">eBike: Batteries</title><link href="http://micahmartin.com/2019/09/04/ebike-batteries.html" rel="alternate" type="text/html" title="eBike: Batteries" /><published>2019-09-04T00:00:00-07:00</published><updated>2019-09-04T00:00:00-07:00</updated><id>http://micahmartin.com/2019/09/04/ebike-batteries</id><content type="html" xml:base="http://micahmartin.com/2019/09/04/ebike-batteries.html">&lt;h4 id=&quot;goals&quot;&gt;Goals&lt;/h4&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://micahmartin.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://micahmartin.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://micahmartin.com/" rel="alternate" type="text/html" /><updated>2019-09-09T21:53:13-07:00</updated><id>http://micahmartin.com//</id><title type="html">Electric Airplane Adventures</title><subtitle>My adventures in building electric airplanes.
+</subtitle><author><name>Micah Martin</name></author><entry><title type="html">eBike: BMS</title><link href="http://micahmartin.com/2019/09/09/ebike-bms.html" rel="alternate" type="text/html" title="eBike: BMS" /><published>2019-09-09T00:00:00-07:00</published><updated>2019-09-09T00:00:00-07:00</updated><id>http://micahmartin.com/2019/09/09/ebike-bms</id><content type="html" xml:base="http://micahmartin.com/2019/09/09/ebike-bms.html">&lt;p&gt;As mentioned in the &lt;a href=&quot;/eflight/2019/02/08/building-a-bms.html&quot;&gt;previous blog about BMS&lt;/a&gt;, I designed a PCB (printed circuit board) to accommodate the BQ76940 (monitoring chip) by TI (Texas Instruments).  This board has served me well so far in multiple applications.  Below is a picture of the BMS board fully populated.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/eflight/img/2019-09-09/1.jpg&quot; alt=&quot;BMS&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;components--features&quot;&gt;Components &amp;amp; Features&lt;/h4&gt;
+
+&lt;h5 id=&quot;mosfets&quot;&gt;MOSFETS&lt;/h5&gt;
+
+&lt;p&gt;Metal Oxide Field Effect Transistors (MOSFETs or FETs) are the gates for incoming (charge) current and outgoing (discharge) current.  The picture above only has two, but 4 can be installed to share the load.  In normal operation, all FETs are “ON” allowing current to flow in both directions.  But when something goes wrong, say the batteries voltage is too low, the discharge FETs can be turned off protecting the cells from being drained too much.  Or if the charge voltage is too high the charge FETs can be turned off to, again, protect the cells.&lt;/p&gt;
+
+&lt;h5 id=&quot;fet-driver&quot;&gt;FET Driver&lt;/h5&gt;
+
+&lt;p&gt;The FETs are N-Channel MOSFETs.  Without going into too much detail, just know that N-Channel FETs need a relatively high voltage to be turned on.  And if you don’t turn them on fast or hard enough, they can get really hot.  So that’s what the driver takes care of.  When you tell the driver to turn on a FET, through use of a charge pump, it sends a nice high voltage with plenty of current to turn that FET on hard.&lt;/p&gt;
+
+&lt;h5 id=&quot;voltage-senors&quot;&gt;Voltage Senors&lt;/h5&gt;
+
+&lt;p&gt;The monitoring chip (BQ76940) does most of the hard work here, but there are plenty of components involved in getting the chip connected to both ends of each cell.  This is all the small stuff on the left side of the board.  The voltage of each cell is measured up to 4 times a second.&lt;/p&gt;
+
+&lt;h5 id=&quot;balance-circuits&quot;&gt;Balance Circuits&lt;/h5&gt;
+
+&lt;p&gt;For each cell there are several components, most notably a transistor and power resistor all the way on the left, that allow the board to slowly drain current from each cell individually.  Typically while charging, if one or more cells has a higher voltage than the others, it can be “balanced” back down to a voltage that matches its peers.&lt;/p&gt;
+
+&lt;h5 id=&quot;current-measuring&quot;&gt;Current Measuring&lt;/h5&gt;
+
+&lt;p&gt;In the lower right, between the BATT- and PACK- terminals, there’s a 0.001 ohm resistor through which all pack current flows. Using Ohm’s Law (V=IR), the voltage on each side of the resistor can be measured to determine how much current is flowing in or out of the battery.&lt;/p&gt;
+
+&lt;h5 id=&quot;pre-charge-circuit&quot;&gt;Pre-Charge Circuit&lt;/h5&gt;
+
+&lt;p&gt;The four power resistors lined up near the top center are power resistors used to charge the cells at a very slow rate.  This is handy when the cells have been over-depleted and full charge current would damage them.&lt;/p&gt;
+
+&lt;h5 id=&quot;controller-interface-pins&quot;&gt;Controller Interface Pins&lt;/h5&gt;
+
+&lt;p&gt;Although this BMS circuit can do a ton of stuff, it’s without brains.  To complete the task, some software running on a microcontroller is needed.  The connector on the bottom center is where the controller is connected.&lt;/p&gt;
+
+&lt;h4 id=&quot;microcontroller&quot;&gt;Microcontroller&lt;/h4&gt;
+
+&lt;h5 id=&quot;arduino-nano&quot;&gt;Arduino Nano&lt;/h5&gt;
+
+&lt;p&gt;In the picture below, the BMS is all connected in a test environment.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;The cells are all connected through the balance wires.&lt;/li&gt;
+  &lt;li&gt;The positive and negative terminals are connected to BATT+ and BATT- respectively.&lt;/li&gt;
+  &lt;li&gt;The “load” is connected to PACK+ and PACK-.&lt;/li&gt;
+  &lt;li&gt;The controller is connected to the interface pins&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/eflight/img/2019-09-09/2.jpg&quot; alt=&quot;BMS Wired Up&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here, I was using an Arduino Nano as the microcontroller.  It worked.  But programming in C/C++ is, well, wordy and slow.  The Nano also lacks in the memory department.  I was reaching the limits of how much code I could put on the poor chip and I had only just gotten started.&lt;/p&gt;
+
+&lt;h5 id=&quot;adafruit-feature--circuitpython&quot;&gt;Adafruit Feature / CircuitPython&lt;/h5&gt;
+
+&lt;p&gt;Adafruit sells a wonderful &lt;a href=&quot;https://www.adafruit.com/feather&quot;&gt;line of boards called Feathers&lt;/a&gt;.  Not only are they much beefier than the Arduino Nano, but they come equipped with CircuitPython which means you can program them in Python!  Now, Python is not my favorite language, but compared to coding in C, it tastes like ambrosia, nectar of the gods.&lt;/p&gt;
+
+&lt;p&gt;I started with the Feather M0, and progress was quick.  But Python consumes a LOT more memory than C, and runs at a fraction of the speed.  It wasn’t long before I hit a wall and had to upgrade to the Feather M4.  I made much more progress with that board, but there was another problem.&lt;/p&gt;
+
+&lt;p&gt;Adafruit, bless their hearts, caters to beginners.  As a consequence, writing code in CircuitPython was like riding a bike with training wheels.  The friendliness of the environment wore off fast and I was hindered every step I took.&lt;/p&gt;
+
+&lt;h5 id=&quot;pyboard--micropython&quot;&gt;PyBoard / MicroPython&lt;/h5&gt;
+
+&lt;p&gt;MicroPython is the ancestor of CircuitPython and it keeps things real.  PyBoards, which are similar to the Feathers, are designed specifically to run MicroPython and include plenty of peripheral hardware (like an accelerometer) to keep things interesting.&lt;/p&gt;
+
+&lt;p&gt;On the PyBoard, I was was able to plow through and accomplish all my goals. The finished BMS not only included the main battery protection circuit, but also a little OLED screen to monitor the pack and a rotary encoder to interact with it.&lt;/p&gt;
+
+&lt;h4 id=&quot;electric-skateboard-20&quot;&gt;Electric Skateboard 2.0&lt;/h4&gt;
+
+&lt;p&gt;The first use of this freshly squeezed BMS was the skateboard.  Sadly, the previous not-so-smart BMS that was installed in the skateboard had failed and allowed the cells to fully drain.  They were no good any longer.  So I built a new pack of cells, installed the BMS, and 3D-printed a new cover.  See below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/eflight/img/2019-09-09/3.jpg&quot; alt=&quot;BMS in Skateboard&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The new cells are on the left.  The BMS is in the middle with the PyBoard stacked on top using a 3D printed mount I designed.  And on the right is the motor speed controller.  Attached to the cover is the OLED screen and rotary encoder with dangling wires that get connected to the PyBoard’s circuitry.&lt;/p&gt;
+
+&lt;p&gt;You may notice that there is also a buck converter stacked on top of the BMS.  The BMS board does provide about 20 mA of power, but it’s not enough for the PyBoard, OLED screen, and rotary encoder.  The buck converter takes the 36V juice directly from the batteries and feeds the other devices at 3.3V.&lt;/p&gt;
+
+&lt;h4 id=&quot;works-too-well&quot;&gt;Works Too Well&lt;/h4&gt;
+
+&lt;p&gt;The BMS in the skateboard worked perfectly!  It did everything I programmed it to do.  But the real world is not perfect.&lt;/p&gt;
+
+&lt;p&gt;You see.  When a speed controller says it uses 30A max, it really uses up to 31 or 32 amps some times.  My BMS saw that said “Shut The Front Door!”   And when a charger says it charges at 42V, it really charges at 42.3 or even 43V.  Again, my BMS saw this and said “Foul!  Red Card!”  The problems kept coming and my perfect little BMS became a paranoid schizophrenic.  I put it on Lithium (see what I did there?) and updated its code to “model the real world”.&lt;/p&gt;
+
+&lt;p&gt;Not long after, I was riding skateboard 2.0 around the neighborhood and life was good. With that accomplishment under my belt I called my brother Justin and told him I was ready to build some battery packs for his derelict moped.  I already told that story.&lt;/p&gt;
+
+&lt;h4 id=&quot;ebike-bmss&quot;&gt;eBike BMS’s&lt;/h4&gt;
+
+&lt;p&gt;They’re kinda buried beneath the wires in this picture, but you can make them out.&lt;/p&gt;
+
+&lt;p&gt;In this design, I did away with the OLED screen and rotary encode because there’s a RaspberryPi and touch screen that I’ll talk about in a later post.&lt;/p&gt;
+
+&lt;p&gt;Of note here is that the two BMS are working in parallel.  They don’t know about each other yet they share all the connections to the rest of the bike.  This demonstrated some interesting feedback problems.  For example, at one point BMS #1 shutdown due to discharge over current.  That left BMS #2 and it’s cells to do all the work powering the bike.  It did fine but used up a bunch of juice in the process.  When I realized that happened, I tried to turn BMS #1 on.  But, it had a higher voltage than BMS #2 now and immediately started to charge BMS #2.  Since there’s no resistance between the two BMS’s, the current skyrocketed and both BMS’s shutdown due to overcurrent.  There was no way to turn them on anymore.  They were locked in an death grip… until I charged them.&lt;/p&gt;
+
+&lt;p&gt;Some communication is needed between the BMS’s.  In the case of the eBike, I took advantage of the RaspberryPi to mediate.  The BMS’s were already talking to the RaspbeeryPI to report their status and voltages.  By expanding the communication API the RaspberryPi is able to make sure both BMS’s play nice with each other.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/eflight/img/2019-09-09/4.png&quot; alt=&quot;BMS in eBike&quot; /&gt;&lt;/p&gt;</content><author><name>Micah Martin</name></author><category term="eBike" /><category term="BMS" /><summary type="html">As mentioned in the previous blog about BMS, I designed a PCB (printed circuit board) to accommodate the BQ76940 (monitoring chip) by TI (Texas Instruments).  This board has served me well so far in multiple applications.  Below is a picture of the BMS board fully populated.</summary></entry><entry><title type="html">eBike: Batteries</title><link href="http://micahmartin.com/2019/09/04/ebike-batteries.html" rel="alternate" type="text/html" title="eBike: Batteries" /><published>2019-09-04T00:00:00-07:00</published><updated>2019-09-04T00:00:00-07:00</updated><id>http://micahmartin.com/2019/09/04/ebike-batteries</id><content type="html" xml:base="http://micahmartin.com/2019/09/04/ebike-batteries.html">&lt;h4 id=&quot;goals&quot;&gt;Goals&lt;/h4&gt;
 
 &lt;h5 id=&quot;speed&quot;&gt;Speed&lt;/h5&gt;
 
@@ -682,46 +774,4 @@
 
 &lt;p&gt;Now, brand name 18650 batteries are well made and will not likely explode when you solder them.  But there’s a risk.  And certainly, the heat will damage the cells.  They’ll have less capacity and a shorter life.&lt;/p&gt;
 
-&lt;p&gt;Spot welding get’s hot too.  But the heated area is so small and the duration is so short, the head barely penetrates into the cell.  Here’s a &lt;a href=&quot;https://www.youtube.com/watch?v=byvr-dwwao4&quot;&gt;video comparing soldering and spot welding with a thermal camera&lt;/a&gt;.&lt;/p&gt;</content><author><name>Micah Martin</name></author><category term="Battery" /><summary type="html">In the previous post on the electric skateboard I alluded to a better way to connect batteries.  The steel springs and screw I had originally used led to voltage sag because of the relatively high resistance of steel.  A better solution is to use Nickel strips and spot weld them to the battery terminals.</summary></entry><entry><title type="html">Electric Skateboard</title><link href="http://micahmartin.com/2018/07/18/electric-skateboard.html" rel="alternate" type="text/html" title="Electric Skateboard" /><published>2018-07-18T00:00:00-07:00</published><updated>2018-07-18T00:00:00-07:00</updated><id>http://micahmartin.com/2018/07/18/electric-skateboard</id><content type="html" xml:base="http://micahmartin.com/2018/07/18/electric-skateboard.html">&lt;p&gt;An electric plane is a large project.  I need to start small, so I built an electric skateboard.  It has all the same basic components as the plane will: motor, controller, and battery. To get familiar with that trio, this is an ideal project.  Below is shot of the finished “esk8”.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/eflight/img/2018-07-18/1.jpg&quot; alt=&quot;Finished Board Top&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;getting-started&quot;&gt;Getting Started&lt;/h4&gt;
-
-&lt;p&gt;The LA gang of 8th Light introduced me to esk8s with their Boosted Boards.  I loved them!  My son Luka and I had talked about building one for a couple years.  This was the time to do it.&lt;/p&gt;
-
-&lt;p&gt;While watching YouTube videos on the topic, I found &lt;a href=&quot;https://www.youtube.com/watch?v=1D90heZ8z4s&quot;&gt;this video by a guy named Micah Toll&lt;/a&gt;.  (Great name!)  Not only did Micah do a great job on the video, he has &lt;a href=&quot;http://www.electricskateboardparts.com/&quot;&gt;a site where he sells electric skateboard kits&lt;/a&gt;. I bought one.  However, I did not buy the battery because I wanted the experience of building the battery pack myself.  And it turns out &lt;a href=&quot;https://www.amazon.com/DIY-Lithium-Batteries-Build-Battery/dp/0989906701/ref=sr_1_1?ie=UTF8&amp;amp;qid=1531974163&amp;amp;sr=8-1&amp;amp;keywords=Micah+Toll&quot;&gt;Micah wrote a book on how to do that&lt;/a&gt;.  I bought the book too and read it one morning.&lt;/p&gt;
-
-&lt;p&gt;Buying lithium batteries is tricky.  They’re expensive, they’re in high demand and there’s a good deal of fraud out there.  This project only required a handful so I went to my trusted source, Amazon, and purchased 20 Samsung 25R 18650 cells.  These cells have a medium capacity of 2500 mAh and a really nice discharge rate of 20A.  With a 10s2p (10 cells in series, 2 in parallel) the pack will yield 36 nominal volts at 40 amps max.&lt;/p&gt;
-
-&lt;p&gt;The the video shows off those nifty &lt;a href=&quot;https://vruzend.com/&quot;&gt;Vrusend battery pack builders&lt;/a&gt;.  Unfortunately they were sold out.  No big deal, I can design something similar in CAD and 3D print them into existance.  The picture below shows the results.  While they were printing I ran to Ace to buy the springs, bolts, and, nuts you see there.  The metal strips are made from left over aluminum sheet from the OneX.  The battery pack came together nicely.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/eflight/img/2018-07-18/2.jpg&quot; alt=&quot;First Battery Holders&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;things-go-wrong&quot;&gt;Things Go Wrong&lt;/h4&gt;
-
-&lt;p&gt;Lithium batteries can be easily damaged if they’re overcharged or drained too much.  Good battery chargers will charge the cells to the perfect voltage, but how do you make sure not to drain them too much?  Even worse, this battery pack has 20 cells of which some may charge or discharge faster than others.  To manage this complexity most battery packs include a circuit board called a BMS, Battery Management System.  It will disconnect cells before they under/over charge and make sure all the cells have a balanced charge.&lt;/p&gt;
-
-&lt;p&gt;The BMS I got was about $20 off Amazon.  That’s cheap as far as BMS’s go.  You get what you pay for.  When I connected it, it appeared not to work.  So I ordered another.  It did work.  I charged the pack and all the cells showed a nice high voltage.&lt;/p&gt;
-
-&lt;p&gt;Assembling the rest of the skateboard kit was uneventful.  So with the battery charged I plugged it into the dual motor controllers and they came to life with a beep and solid red LED.  On the handheld remote I pushed on the throttle and the wheels spun!  Awesome!  It was time to ride.  With some zip-ties I strapped everything to the board, put it on the ground, stepped right on and throttled up.  The board moved, but only a bit, and then did nothing.  I unplugged the battery, replugged it, tried again, and the same thing happened.&lt;/p&gt;
-
-&lt;p&gt;There was a major problem that I attributed to bad controllers.  I emailed Micah.  He had me run some tests and concluded that the BMS was cutting off the battery due to low voltage.  But how could that be?  The lithium cells were brand new and I measured really high voltage coming out of the pack.  Well, Micah pointed out to me that the springs and bolts in my pack were the culprit, causing “voltage sag”.  They are made of steel, and steel has a relatively poor conductivity.  With me on the board it has to pull a significant amount of current to spin the wheels.  Ohms Laws, V=IR.  The voltage drop is proportional to the current and with the high resistance of steel, the voltage drops enough to make the BMS think the batteries have been drained too much.  It cuts out.&lt;/p&gt;
-
-&lt;h4 id=&quot;rebuild&quot;&gt;Rebuild&lt;/h4&gt;
-
-&lt;p&gt;Over time I rebuild the battery pack using more industrial techniques of which I’ll discuss in a later blog.  It’s cool.  And I added 10 more lithium cells to the pack because I had the space and more range is always nice.&lt;/p&gt;
-
-&lt;p&gt;The BMS’s caused more problems but I can’t really explain it.  They are like black boxes, giving no indication of what they’re doing, or not doing.  And I may have fried one while I was disassembling the first battery pack.  It made a big spark when it shorted against a sharp piece of solder poking through the positive battery terminal insulation.  Eventually I got the original BMS working.  Don’t know how exactly.&lt;/p&gt;
-
-&lt;p&gt;Below you can see all the guts of the board.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/eflight/img/2018-07-18/3.jpg&quot; alt=&quot;Internals&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;finished-board&quot;&gt;Finished Board&lt;/h4&gt;
-
-&lt;p&gt;The final step was to create a protective cover for all the electronics.  I whipped up a simple design in Fusion 360 and printed it over 2 days.  There are 5 attach points to mount the cover to the board, and there are 3 holes for the charging plug, on/off button, and battery status screen.  I installed it today and it fit perfectly.&lt;/p&gt;
-
-&lt;p&gt;There was nothing left to do except ride it!  I cruised around the neighborhood for maybe a mile or more, averaging 10 mph perhaps.  Gee, what fun it was!  The board performed like a champ and had 85% battery charge remaining.  However, it did get hot.  The rear trucks, attached to the motorized wheel, must have been almost 200°F.  Of course, if you carried me for a mile at 10mph on a 110°F day in Pheonix, you’d be hot too.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/eflight/img/2018-07-18/4.jpg&quot; alt=&quot;Finished Bottom&quot; /&gt;&lt;/p&gt;</content><author><name>Micah Martin</name></author><category term="Battery" /><summary type="html">An electric plane is a large project.  I need to start small, so I built an electric skateboard.  It has all the same basic components as the plane will: motor, controller, and battery. To get familiar with that trio, this is an ideal project.  Below is shot of the finished “esk8”.</summary></entry></feed>
+&lt;p&gt;Spot welding get’s hot too.  But the heated area is so small and the duration is so short, the head barely penetrates into the cell.  Here’s a &lt;a href=&quot;https://www.youtube.com/watch?v=byvr-dwwao4&quot;&gt;video comparing soldering and spot welding with a thermal camera&lt;/a&gt;.&lt;/p&gt;</content><author><name>Micah Martin</name></author><category term="Battery" /><summary type="html">In the previous post on the electric skateboard I alluded to a better way to connect batteries.  The steel springs and screw I had originally used led to voltage sag because of the relatively high resistance of steel.  A better solution is to use Nickel strips and spot weld them to the battery terminals.</summary></entry></feed>
