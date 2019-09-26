@@ -1,5 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://micahmartin.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://micahmartin.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://micahmartin.com/" rel="alternate" type="text/html" /><updated>2019-09-09T21:53:13-07:00</updated><id>http://micahmartin.com//</id><title type="html">Electric Airplane Adventures</title><subtitle>My adventures in building electric airplanes.
-</subtitle><author><name>Micah Martin</name></author><entry><title type="html">eBike: BMS</title><link href="http://micahmartin.com/2019/09/09/ebike-bms.html" rel="alternate" type="text/html" title="eBike: BMS" /><published>2019-09-09T00:00:00-07:00</published><updated>2019-09-09T00:00:00-07:00</updated><id>http://micahmartin.com/2019/09/09/ebike-bms</id><content type="html" xml:base="http://micahmartin.com/2019/09/09/ebike-bms.html">&lt;p&gt;As mentioned in the &lt;a href=&quot;/eflight/2019/02/08/building-a-bms.html&quot;&gt;previous blog about BMS&lt;/a&gt;, I designed a PCB (printed circuit board) to accommodate the BQ76940 (monitoring chip) by TI (Texas Instruments).  This board has served me well so far in multiple applications.  Below is a picture of the BMS board fully populated.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://micahmartin.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://micahmartin.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://micahmartin.com/" rel="alternate" type="text/html" /><updated>2019-09-26T09:43:04-07:00</updated><id>http://micahmartin.com//</id><title type="html">Electric Airplane Adventures</title><subtitle>My adventures in building electric airplanes.
+</subtitle><author><name>Micah Martin</name></author><entry><title type="html">eBike: Milled Circuit Board</title><link href="http://micahmartin.com/2019/09/25/ebike-milled-circuit-board.html" rel="alternate" type="text/html" title="eBike: Milled Circuit Board" /><published>2019-09-25T00:00:00-07:00</published><updated>2019-09-25T00:00:00-07:00</updated><id>http://micahmartin.com/2019/09/25/ebike-milled-circuit-board</id><content type="html" xml:base="http://micahmartin.com/2019/09/25/ebike-milled-circuit-board.html">&lt;p&gt;The eBike is controlled with a &lt;a href=&quot;https://www.raspberrypi.org/products/raspberry-pi-4-model-b/&quot;&gt;Raspberry Pi&lt;/a&gt;, which will be the topic of a later post.  Here’s I’d like to discuss circuit board through which the Raspberry Pi manages all the hardware on the bike.  The hardware features include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Headlights&lt;/li&gt;
+  &lt;li&gt;Tail Light&lt;/li&gt;
+  &lt;li&gt;Brake Light&lt;/li&gt;
+  &lt;li&gt;Brake Cutoff&lt;/li&gt;
+  &lt;li&gt;Ignition&lt;/li&gt;
+  &lt;li&gt;Power Up&lt;/li&gt;
+  &lt;li&gt;Speedometer / Odometer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;circuit-board-evolution&quot;&gt;Circuit Board Evolution&lt;/h4&gt;
+
+&lt;p&gt;Here’s the original prototype that was assembled piecemeal as the bike evolved.  The protoboard worked great but got quite crowded toward the end.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/eflight/img/2019-09-25/2.jpg&quot; alt=&quot;Prototype&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;What a mess, eh?  With the circuit fully fleshed out, it was time to create a more permanent solution.&lt;/p&gt;
+
+&lt;p&gt;In total there were 5 attempts to get a finished product.  Here’s the graveyard of failed and obsolete boards.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/eflight/img/2019-09-25/3.jpg&quot; alt=&quot;Graveyard&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A closeup of the populated board:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/eflight/img/2019-09-25/1.jpg&quot; alt=&quot;Populated&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The 5th version is currently on the bike.  Truth be told, there will likely be a 6th version because I still had to hack the 5th to get it working right.&lt;/p&gt;
+
+&lt;h4 id=&quot;mcb---milled-circuit-board&quot;&gt;MCB - Milled Circuit Board&lt;/h4&gt;
+
+&lt;p&gt;With the &lt;a href=&quot;/eflight/2019/09/09/ebike-bms.html&quot;&gt;BMS circuit board&lt;/a&gt;, I sent my design to &lt;a href=&quot;https://jlcpcb.com&quot;&gt;JLCPCB&lt;/a&gt; which is a great Printed Circuit Board (PCB) manufacturer.  The quality of their boards are very high at a great price!  Sadly, it takes a week for them to manufacture the boards and for the shipping company to deliver them.  And you have to order multiple boards.&lt;/p&gt;
+
+&lt;p&gt;This eBike board is a one-off.  And I didn’t want to wait a week.  So I tried a technique I saw on Youtube:  Milled Circuit Boards.  The design process is mostly the same as for PCBs.  &lt;a href=&quot;https://easyeda.com/&quot;&gt;EasyEDA&lt;/a&gt; is my tool if choice for designing circuit boards.  Finished designs come in the form of “Gerber” files.  These are what you give the manufactures.  However, for this board I needed to convert the Gerber files into a format that I could use on my &lt;a href=&quot;https://carbide3d.com/shapeoko/&quot;&gt;Shapeoko CNC Router&lt;/a&gt;.  &lt;a href=&quot;http://flatcam.org/&quot;&gt;FlatCAM&lt;/a&gt; is open source desktop software specifically made to convert Gerber files into GCode (CNC language). It did the trick.&lt;/p&gt;
+
+&lt;p&gt;Watching the CNC machine work on these circuit boards is mesmerizing.  I took a video that you can watch below.  NOISE ALERT!  You might want to turn down your speaker before playing.&lt;/p&gt;
+
+&lt;iframe src=&quot;https://player.vimeo.com/video/362420662&quot; width=&quot;640&quot; height=&quot;360&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; fullscreen&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;h4 id=&quot;general-architecture&quot;&gt;General Architecture&lt;/h4&gt;
+
+&lt;p&gt;Now for the nitty-gritty.  You can stop reading unless you’re into electrical circuit design.&lt;/p&gt;
+
+&lt;p&gt;The board has two power rails, 3.3V provided by the Raspberry Pi, and ~60V that comes from the batteries.  Both rails have a common ground.&lt;/p&gt;
+
+&lt;h5 id=&quot;lights&quot;&gt;Lights&lt;/h5&gt;
+
+&lt;p&gt;Controlling the Headlights, Tail Light, and Brake Light is straight forward.  All three lights are LED’s that run off 60V.  I had ordered some high voltage logic level N-channel power MOSFETS.  The 3.3V from the Raspberry Pi is sufficient to drive the Gate pin of the FETs.  The Source pin is connected to ground and the Drain is connected to the cathode of the LEDs.  Easy.&lt;/p&gt;
+
+&lt;h5 id=&quot;brake-cutoff&quot;&gt;Brake Cutoff&lt;/h5&gt;
+
+&lt;p&gt;The Brake Cutoff is a safety feature of the ESC (Electronic Speed Controller) that prevents the rider from applying both the brakes and accelerator at the same time.  The ESC has a Brake Cutoff wire that should go to ground when brakes are applied.  In most bikes, this wire is connected directly to the brake handles which have an internal switch that closes when you apply them.  However, I need the Brake Light to turn on when brakes are applied, so the simple solution doesn’t work.&lt;/p&gt;
+
+&lt;p&gt;My brakes are connected the the 3.3V rail and an a GPIO pin of the Raspberry Pi.  When brakes are applied, the GPIO pin goes HIGH and the software detects this.  The Brake Light is turned on and another MOSFET is turned on to connect the Brake Cuttoff wire to ground.&lt;/p&gt;
+
+&lt;h5 id=&quot;ignition&quot;&gt;Ignition&lt;/h5&gt;
+
+&lt;p&gt;Another wire exposed by the ESC, the Ignition, is typically connected to an ignition key that switches the battery voltage.  No significant power is drawn through this wire.  It’s simply a signal to tell the ESC that the bike has been turned on.&lt;/p&gt;
+
+&lt;p&gt;No key for me.  Instead my bike uses a key pad on the touch screen.  When the correct code is entered, the Ignition is turned on.&lt;/p&gt;
+
+&lt;p&gt;The simple N-Channel MOSFET trick won’t work to connect the ESC’s Ignition wire to 60V.  It would require a charge pump or something to bring the Gate to ~63V.  Parts I didn’t have.  What I did have was opto FETs; solid-state relays where one side is an LED that turns on a FET bridging the other side.  And to my luck, they are rated for 60V.  Win!&lt;/p&gt;
+
+&lt;p&gt;When the secret code is entered, the Raspberry Pi brings a GPIO HIGH to turn on the opto FET.  The other side of the FET bridges 60V with the Ignition wire. Now, when I measured the current drawn by the Ignition wire, I read 50 mA.  The opto FETs are rated for 100mA so all’s good.  But there must be a current spike because the opto FET got fried.  A current limiting resistor, protection diode, and a new opto FET played together nicely.&lt;/p&gt;
+
+&lt;p&gt;Then I noticed that the ignition stayed on, even when the Raspberry PI pulls the pin LOW.  Maybe it was intern capacitance of the opto FET, or some mystery of the ESC internals.  Either way I couldn’t let the Ignition stay ON for some unkown duration.  So using another opto FET I bring the Ignition wire to ground momentarily, and then it stays there.&lt;/p&gt;
+
+&lt;h5 id=&quot;power-up&quot;&gt;Power Up&lt;/h5&gt;
+
+&lt;p&gt;Another divergence from typical bike design is that I wanted my batteries TOTALLY disconnected from the motor when the bike is not in use.  The problem here is that the ESC has some hefty capacitors that love to charge up quick when connected to power.  You can see the spark when the ESC is first connected to batteries.&lt;/p&gt;
+
+&lt;p&gt;When the Raspberry Pi unlocks the bike, after the secret code is entered, the first thing it does is turn on the batteries.  If the bike has been sitting for a while, those hungry capacitors in the ESC are just waiting to chug some juice, and when the batteries are turned on the caps do chug, fast!  Current coming out the batteries sky rockets and the BMS kicks in shutting down the battery; Discharge Overcurrent.&lt;/p&gt;
+
+&lt;p&gt;What’s needed is a “warm up” circuit.  Something that feeds those caps at a slow rate until they’re full enough that the batteries can safely be turned on.  So I measured the ESC capacitance, 4mF, and did some math.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;t = RC, 2*t give 95% charge and I’d like that to be 1 sec or less, so t = 0.5.&lt;/li&gt;
+  &lt;li&gt;0.5 = R * 0.004 ===&amp;gt;  R = 125.  We’ll round it down to 120 ohms.  Now how much power is going through that resistor?&lt;/li&gt;
+  &lt;li&gt;P = V^2/R ===&amp;gt; 30W.  Wow.  That’s a lot of power.  It means I need to order special power resistors.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;How to power this “warm up” circuit with out turning the batteries on?  Well, I tapped that batteries directly, bypassing the BMS, to created an isolated 60V rail on the circuit board.  It’s not ideal, but for this project we’ll let it slide.&lt;/p&gt;
+
+&lt;p&gt;The positive sides of the “warm up” 60 V and normal 60V rails are linked through the 120 ohm power resistor.  But the grounds goes through another N-channel MOSFET.  When the N-FET is turned on the normal 60V rail is powered, limited by the resistor, and the ESC caps charge up for 1 second.  Then the N-FET is turned off and the batteries are turned on, without any Overcurrent.&lt;/p&gt;
+
+&lt;p&gt;Since the N-FET is on an isolated ground, the Gate can’t be driven by the Raspberry Pi.  The Gate needs to be driven from the isolated “warm up” power.  Hmm…  Well the Raspberry Pi can turn on an opto FET.   And resistors can divide the “warm up”’s 60V down to 5V to drive the Gate.   So there you have it.&lt;/p&gt;
+
+&lt;h5 id=&quot;speedometer--odometer&quot;&gt;Speedometer / Odometer&lt;/h5&gt;
+
+&lt;p&gt;The wheels on the bike go round and round.  Given the diameter of the tire and the interval between rotations, calculating speed and distance is easy.&lt;/p&gt;
+
+&lt;p&gt;There is a “Hall” wire exposed by the ESC that is undocumented.  Using my scope I learned that it produces a 3V square wave of 16 periods for each revolution of the tire.  By using a GPIO pin on the Raspberry Pi, I was able to detect the rises of the square wave and use that to calculate speed and distance.&lt;/p&gt;
+
+&lt;p&gt;There were just two problems.&lt;/p&gt;
+
+&lt;p&gt;1) The Hall wire actually peaked at 5V, though only in very short spikes.  Three pins on the Raspberry Pi got fried before I figured this out.  The fix was to use another opto FET.  The Hall wire turns it on with 5V.  The Raspberry Pi powers the other side with 3.3V.&lt;/p&gt;
+
+&lt;p&gt;2) EMI - Electro-Magnetic Interference.  The ESC inverts the DC current into AC at a high rate to drive the motor. This produces EMI all over the circuit that can be seen on the scope as tiny spikes in voltage, dozens a second.  The Raspberry Pi pin to sees these as dozens of rises each second, even if the tire isn’t moving.  Although this problem vexed me for days, the solution was simple.  A 100nF capacitor across the pin and ground did the trick.&lt;/p&gt;
+
+&lt;p&gt;Originally, I ordered a Reed switch (a switch that reacts to magnets) that I would install on the front tire.  But I was intrigued by the Hall wire and the simplicity it would add to the overall design.  But I’ll freely admist that the Speedometer and Odometer are not 100% reliable due to the problems mentioned above.  Now I’m inclined to install that reed switch and be done with the Hall meter mess.&lt;/p&gt;</content><author><name>Micah Martin</name></author><category term="ebike" /><summary type="html">The eBike is controlled with a Raspberry Pi, which will be the topic of a later post.  Here’s I’d like to discuss circuit board through which the Raspberry Pi manages all the hardware on the bike.  The hardware features include:</summary></entry><entry><title type="html">eBike: BMS</title><link href="http://micahmartin.com/2019/09/09/ebike-bms.html" rel="alternate" type="text/html" title="eBike: BMS" /><published>2019-09-09T00:00:00-07:00</published><updated>2019-09-09T00:00:00-07:00</updated><id>http://micahmartin.com/2019/09/09/ebike-bms</id><content type="html" xml:base="http://micahmartin.com/2019/09/09/ebike-bms.html">&lt;p&gt;As mentioned in the &lt;a href=&quot;/eflight/2019/02/08/building-a-bms.html&quot;&gt;previous blog about BMS&lt;/a&gt;, I designed a PCB (printed circuit board) to accommodate the BQ76940 (monitoring chip) by TI (Texas Instruments).  This board has served me well so far in multiple applications.  Below is a picture of the BMS board fully populated.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/eflight/img/2019-09-09/1.jpg&quot; alt=&quot;BMS&quot; /&gt;&lt;/p&gt;
 
@@ -738,40 +838,4 @@
 &lt;p&gt;Fast forward through roughly 18 hours of printing and a little bit of time trimming, sanding, and gluing the parts together.  We now have a Coulomb Keeper, in the flesh,… or plastic.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/eflight/img/2018-08-14/2.jpg&quot; alt=&quot;Grounded&quot; /&gt;
-&lt;img src=&quot;/eflight/img/2018-08-14/4.jpg&quot; alt=&quot;Tristan and Micah&quot; /&gt;&lt;/p&gt;</content><author><name>Micah Martin</name></author><category term="3D Printing" /><summary type="html">I need to tell you all about 3D printing flying R/C planes, and I will.  It’s really cool!  But this blog is about a different type of 3D printed airplane.  It’s called the Coulomb Keeper.</summary></entry><entry><title type="html">Welding Batteries</title><link href="http://micahmartin.com/2018/08/06/welding-batteries.html" rel="alternate" type="text/html" title="Welding Batteries" /><published>2018-08-06T00:00:00-07:00</published><updated>2018-08-06T00:00:00-07:00</updated><id>http://micahmartin.com/2018/08/06/welding-batteries</id><content type="html" xml:base="http://micahmartin.com/2018/08/06/welding-batteries.html">&lt;p&gt;In the &lt;a href=&quot;/eflight/2018/07/18/electric-skateboard.html&quot;&gt;previous post on the electric skateboard&lt;/a&gt; I alluded to a better way to connect batteries.  The steel springs and screw I had originally used led to voltage sag because of the relatively high resistance of steel.  A better solution is to use Nickel strips and spot weld them to the battery terminals.&lt;/p&gt;
-
-&lt;p&gt;Here’s a picture of new welded battery pack for the skateboard.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/eflight/img/2018-08-06/1.jpg&quot; alt=&quot;New Battery Pack&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;spot-welding&quot;&gt;Spot Welding&lt;/h4&gt;
-
-&lt;p&gt;A spot welder works by releasing a pulse (or two) of high current through two leads.  The leads should be touching the material, let’s assume Nickel, to be welded.  The high current heats up the Nickel beyond it’s melting point and once cooled, the metal surfaces are welded together.&lt;/p&gt;
-
-&lt;p&gt;Most spot welders actually release two pulses of current.  The first is a short pulse that will soften the Nickel and burn any contaminants.  Afterwards the leads make much better contact with the Nickel.  This makes the second, longer pulse more effective.  It’s the second pulse that causes the welding.&lt;/p&gt;
-
-&lt;h4 id=&quot;nickel&quot;&gt;Nickel&lt;/h4&gt;
-
-&lt;p&gt;Pure Nickel is a great material for spot welding batteries.  1) Nickel is 12 times more conductive than stainless steel.  It can carry the high current loads without significant voltage sag.  2) Nickel is 4 times more resistive (25% the conductivity) of copper.  Now, Copper, Silver, Gold, and Aluminum are all better conductors than Nickel, but when it comes to spot welding, we need one metal to melt.  If we tried spot welding copper strips, the copper leads would end up welded to the copper strips.  Not good!  Nickel has enough resistance to soak up some current and heat to it’s melting point first.&lt;/p&gt;
-
-&lt;p&gt;For the purpose of building battery packs, I purchased a big roll of 8mm x 0.15mm Nickel tape.  With these dimensions, one strip can safely carry 5 Amps.  But the pack needs to deliver 20 Amps.  So in many places there are multiple strips of Nickle overlapping and welded together.  The combined strips are sufficient to carry the 20A load.&lt;/p&gt;
-
-&lt;h4 id=&quot;arduino-spot-welder&quot;&gt;Arduino Spot Welder&lt;/h4&gt;
-
-&lt;p&gt;Try shopping for a spot welder online.  You’ll find industrial welders, the kind used on cars.  And you’ll find welders made in China with chinese labels.  I was pleased to see that there’s a &lt;a href=&quot;https://www.instructables.com/id/DIY-Arduino-Battery-Spot-Welder/&quot;&gt;DYI welder built using an Ardiuno&lt;/a&gt;.  Not only does tham mean I can download the source code and play with it, but this welder has hand-held leads and a pedal to trigger the pulses.&lt;/p&gt;
-
-&lt;p&gt;I shared a few emails with &lt;a href=&quot;https://malectrics.eu/&quot;&gt;Marc from Malectrics&lt;/a&gt; and I gotta say, he’s a good guy.  Very helpful!&lt;/p&gt;
-
-&lt;p&gt;I hooked up the Arduino welder to my backup EarthX battery for the OneX, and it worked awesome!  Love it.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/eflight/img/2018-08-06/2.jpg&quot; alt=&quot;Sopt Welder&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;why-not-solder&quot;&gt;Why Not Solder?&lt;/h4&gt;
-
-&lt;p&gt;It would be tempting to just solder copper wire between the batteries.  If you’re like me, you already have a soldering iron and plenty of copper wire.  Whereas, spot welders are not so common and are rather pricey.&lt;/p&gt;
-
-&lt;p&gt;With Lithium batteries, heat is the enemy.  It’s always fun to watch &lt;a href=&quot;https://www.youtube.com/results?search_query=Li-ion+Thermal+runaway&quot;&gt;Youtube videos of thermal runaway of Li-ion cells&lt;/a&gt;.  Cells reaching temperatures higher than 265°F are susceptible to thermal runaway.  Solder melts at 370°F and soldering irons often reach 600°F or more.  Li-ion batteries do indeed absorb the heat of the solder and the soldering iron and the internal chemicals almost certainly reach 265°.&lt;/p&gt;
-
-&lt;p&gt;Now, brand name 18650 batteries are well made and will not likely explode when you solder them.  But there’s a risk.  And certainly, the heat will damage the cells.  They’ll have less capacity and a shorter life.&lt;/p&gt;
-
-&lt;p&gt;Spot welding get’s hot too.  But the heated area is so small and the duration is so short, the head barely penetrates into the cell.  Here’s a &lt;a href=&quot;https://www.youtube.com/watch?v=byvr-dwwao4&quot;&gt;video comparing soldering and spot welding with a thermal camera&lt;/a&gt;.&lt;/p&gt;</content><author><name>Micah Martin</name></author><category term="Battery" /><summary type="html">In the previous post on the electric skateboard I alluded to a better way to connect batteries.  The steel springs and screw I had originally used led to voltage sag because of the relatively high resistance of steel.  A better solution is to use Nickel strips and spot weld them to the battery terminals.</summary></entry></feed>
+&lt;img src=&quot;/eflight/img/2018-08-14/4.jpg&quot; alt=&quot;Tristan and Micah&quot; /&gt;&lt;/p&gt;</content><author><name>Micah Martin</name></author><category term="3D Printing" /><summary type="html">I need to tell you all about 3D printing flying R/C planes, and I will.  It’s really cool!  But this blog is about a different type of 3D printed airplane.  It’s called the Coulomb Keeper.</summary></entry></feed>
