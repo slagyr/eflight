@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://micahmartin.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://micahmartin.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://micahmartin.com/" rel="alternate" type="text/html" /><updated>2019-09-26T09:43:04-07:00</updated><id>http://micahmartin.com//</id><title type="html">Electric Airplane Adventures</title><subtitle>My adventures in building electric airplanes.
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://micahmartin.com/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.6.3">Jekyll</generator><link href="http://micahmartin.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://micahmartin.com/" rel="alternate" type="text/html" /><updated>2019-09-26T09:48:56-07:00</updated><id>http://micahmartin.com//</id><title type="html">Electric Airplane Adventures</title><subtitle>My adventures in building electric airplanes.
 </subtitle><author><name>Micah Martin</name></author><entry><title type="html">eBike: Milled Circuit Board</title><link href="http://micahmartin.com/2019/09/25/ebike-milled-circuit-board.html" rel="alternate" type="text/html" title="eBike: Milled Circuit Board" /><published>2019-09-25T00:00:00-07:00</published><updated>2019-09-25T00:00:00-07:00</updated><id>http://micahmartin.com/2019/09/25/ebike-milled-circuit-board</id><content type="html" xml:base="http://micahmartin.com/2019/09/25/ebike-milled-circuit-board.html">&lt;p&gt;The eBike is controlled with a &lt;a href=&quot;https://www.raspberrypi.org/products/raspberry-pi-4-model-b/&quot;&gt;Raspberry Pi&lt;/a&gt;, which will be the topic of a later post.  Here’s I’d like to discuss circuit board through which the Raspberry Pi manages all the hardware on the bike.  The hardware features include:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -714,21 +714,19 @@
 
 &lt;p&gt;According the specs, the MJ1 cells should have a capacity of 3400 - 3500 mAh.  Conveniently, my relatively cheap 18650 charger has a “test” mode to measure the capacity of the cells.  It does this in three steps:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1 fully charge the cell
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1 fully charge the cell
 2 fully drain the cell
 3 fully charge the cell again
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The process takes about a day, and it can handle 4 cells simultaneously.  Odd thing is, it gave results in the 3700 - 3900 mAh range, more than advertised!  Hmm.  Why’s that?  Well, the charger can only run the test at a rate of 500 mA.  That is, when it drains the cell, it will do so by drawing a current of 500 mA until the cell reaches the “minimum voltage”.  The interpretation of minimum voltage my be another source of error.  But anyway, the capacity of a Li-ion cell changes based on the rate at which current is drawn.  So if a large current is drawn from a cell, it will have less capacity than if a small current is drawn.&lt;/p&gt;
 
 &lt;p&gt;MJ1 cells should yield 3400 mAh when discharged at 0.2C, or 0.68 A.  So to test these cells properly, I need to pull a constant 0.68A from them for 5 hours straight.  How does one do that?  I pondered that quastion for several days (while the cells were on the charger) and considered several options:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;* Take them to a profesional battery testing facility (Weak!)
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;* Take them to a profesional battery testing facility (Weak!)
 * Build an Arduino-based circuit to do it (Don't know enough about electronics yet.  Also, time consuming.)
 * Acquire battery testing hardware (Expensive.)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;While on searching on Amazon, I stumbled across &lt;a href=&quot;https://www.amazon.com/gp/product/B07F3NHHST/ref=oh_aui_search_detailpage?ie=UTF8&amp;amp;psc=1&quot;&gt;this device&lt;/a&gt; in the picture below.  It’s a constant current “load tester” device, a simple, cheap one from China.  But it does exactly was I need, for ~$40.  What a bargain!  And it works as advertised.  One minor problem is that it doesn’t know when to stop.&lt;/p&gt;
 

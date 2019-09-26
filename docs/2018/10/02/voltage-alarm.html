@@ -110,21 +110,19 @@
 
 <p>According the specs, the MJ1 cells should have a capacity of 3400 - 3500 mAh.  Conveniently, my relatively cheap 18650 charger has a “test” mode to measure the capacity of the cells.  It does this in three steps:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>1 fully charge the cell
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1 fully charge the cell
 2 fully drain the cell
 3 fully charge the cell again
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The process takes about a day, and it can handle 4 cells simultaneously.  Odd thing is, it gave results in the 3700 - 3900 mAh range, more than advertised!  Hmm.  Why’s that?  Well, the charger can only run the test at a rate of 500 mA.  That is, when it drains the cell, it will do so by drawing a current of 500 mA until the cell reaches the “minimum voltage”.  The interpretation of minimum voltage my be another source of error.  But anyway, the capacity of a Li-ion cell changes based on the rate at which current is drawn.  So if a large current is drawn from a cell, it will have less capacity than if a small current is drawn.</p>
 
 <p>MJ1 cells should yield 3400 mAh when discharged at 0.2C, or 0.68 A.  So to test these cells properly, I need to pull a constant 0.68A from them for 5 hours straight.  How does one do that?  I pondered that quastion for several days (while the cells were on the charger) and considered several options:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>* Take them to a profesional battery testing facility (Weak!)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* Take them to a profesional battery testing facility (Weak!)
 * Build an Arduino-based circuit to do it (Don't know enough about electronics yet.  Also, time consuming.)
 * Acquire battery testing hardware (Expensive.)
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>While on searching on Amazon, I stumbled across <a href="https://www.amazon.com/gp/product/B07F3NHHST/ref=oh_aui_search_detailpage?ie=UTF8&amp;psc=1">this device</a> in the picture below.  It’s a constant current “load tester” device, a simple, cheap one from China.  But it does exactly was I need, for ~$40.  What a bargain!  And it works as advertised.  One minor problem is that it doesn’t know when to stop.</p>
 
