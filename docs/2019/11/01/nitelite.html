@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>NiteLite</title>
+  <meta name="description" content="A while back I modernized an old-school arcade that came with our house. I was running Windows 98 on a tower PC and a fat CRT monitor. I cut about 2’ off the...">
+
+  <link rel="stylesheet" href="/eflight/assets/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="canonical" href="http://micahmartin.com/2019/11/01/nitelite.html">
+  <link rel="alternate" type="application/rss+xml" title="Electric Airplane Adventures" href="/feed.xml">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/eflight">Electric Airplane Adventures</a>
+
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        <a class="page-link" href="/eflight/about">About</a>
+        <!---->
+          <!---->
+          <!--<a class="page-link" href="/about/">About</a>-->
+          <!---->
+        <!---->
+          <!---->
+        <!---->
+          <!---->
+        <!---->
+          <!---->
+        <!---->
+          <!---->
+          <!--<a class="page-link" href="/posts/page2/">Posts - page 2</a>-->
+          <!---->
+        <!---->
+          <!---->
+          <!--<a class="page-link" href="/posts/page3/">Posts - page 3</a>-->
+          <!---->
+        <!---->
+          <!---->
+          <!--<a class="page-link" href="/posts/page2/">Posts - page 2</a>-->
+          <!---->
+        <!---->
+          <!---->
+          <!--<a class="page-link" href="/posts/page3/">Posts - page 3</a>-->
+          <!---->
+        <!---->
+          <!---->
+        <!---->
+          <!---->
+        <!---->
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+
+  <nav aria-label="...">
+    <ul class="pager">
+      
+        <li class="previous"><a href="/eflight/2019/09/25/ebike-milled-circuit-board.html"><span aria-hidden="true">&larr;</span> eBike: Milled Circuit Board</a></li>
+      
+      
+    </ul>
+  </nav>
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">NiteLite</h1>
+    <div class="left-line-colored"></div>
+    <p class="post-meta">
+      <time datetime="2019-11-01T00:00:00-07:00" itemprop="datePublished">Nov 1, 2019</time>
+      
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>A while back I modernized an old-school arcade that came with our house.  I was running Windows 98 on a tower PC and a fat CRT monitor.  I cut about 2’ off the back of the 7’ tall box, replaced the monster CRT with a flat LCD screen, replaced the big tower PC with a credit card sized Raspberry Pi, and installed <a href="https://retropie.org.uk">RetroPi</a> along with classic Commodore 64, Nintendo, and arcade games.  It’s much nicer to use now.</p>
+
+<p>The cherry on top was an <a href="https://www.amazon.com/gp/product/B07JN28KP3">Color LED strip</a> to make it glow against the wall.  Check it out!</p>
+
+<p><img src="/eflight/img/2019-11-01/7.jpg" alt="Arcade" /></p>
+
+<h4 id="controlling-led-strips">Controlling LED Strips</h4>
+
+<p>The point of that story is that I was left with an extra strip of LEDs and no control box or remote to power it.  So one day I wired it up to an Arduino to figure out how it works.  It’s rather simple.  There are four leads or “pins”: 12V in, R(ed), G(reen), B(lue).  Obviously the 12V pin gets connected to a 12V power supply.  When the R, G, or B pins are connected to ground, the LEDs light up in the corresponding color.  If they all get connected to ground, the LEDs glow bright white.  But I wondered: How does that control box get the LEDs to fade in and out with variable brightness?</p>
+
+<p>Here’s how I did it.  With the LEDs’s RGB pins connected to ground through an NPN transistor, the Arduino can turn the LEDs on by putting 5V on the transistor Base.  Even better, the Arduino has a few PWM (Pulse Width Modulation) pins.  They basically turn on and off really fast and you can code the percentage of time they are ON.  Using PWM pins the Arduino can turn the LEDs ON and OFF really fast and control the percentage of time they are ON.  Did I mention the PWM is fast?  It is.  Faster than the eye can see.  So by setting the PWM pins to a low value, the LEDs glow faintly, and with the PWM set to a high value, they glow bright. Cool!</p>
+
+<p>Well, I thought, “There’s gotta be something I can build with that.”  After Googling I found an idea.  My 8yo son Tristan has a clunky night light globe that he turns on every night.  It has a static glow pattern in 3 different colors and rotates with a rattling noise that makes you think it’s going to fall apart any minute.  My plan was to build Tristan a much cooler night light.</p>
+
+<p>The new and improved night light, code named “NiteLite”, would have a strip of LED’s lighting up a glass carving that would glow in a elegant and soothing manner.  An Arduino would control the colors and brightness of the LEDs. And why not put some knobs to allow Tristan to change the color and brightness to any of thousands of possibilities?  To make it even more fun, NiteLite will have a couple buttons that’ll let you cycle through various modes.  Each mode will make the colors dance, fade, and entertaining in various ways.</p>
+
+<p>After some tinkering, I completed a prototype:</p>
+
+<p><img src="/eflight/img/2019-11-01/1.jpg" alt="Airworthy NiteLite" /></p>
+
+<h4 id="3d-printing">3D Printing</h4>
+
+<p>The base of the NiteLite needs to A) hold up the glass carving, and B) encase the electronics.  It occurred to me that I have some “transparent” (more like translucent) PLA that could be used to get the base to glow a bit too.  So I designed a 3 part base that you can see below.  The top section holds the glass.  The middle section uses the clear PLA for a glowing layer.  And the base will hold the electronics.</p>
+
+<p>Although I originally planned to hide all the circuitry inside the base, I rather like the look of circuit boards.  It’s probably just me but circuit boards are cool and keeping it all exposed adds character and intrigue.</p>
+
+<p><img src="/eflight/img/2019-11-01/2.png" alt="Case" /></p>
+
+<h4 id="acrylic-cnc">Acrylic CNC</h4>
+
+<p>I wanted to use my CNC router to carve the glass although I wasn’t going to carve real glass… that’s just scary.  So I went to the hardware store to look for some clear plastic.  What I found was a nice sheet of acrylic.</p>
+
+<p>Using Fusion 360 I designed a… well… I’ll call it a “glow plate”.  Fusion can import SVG images so for the prototype I just used some Airworthy SVG files that I had on my computer. I took my design out to the CNC machine and…  machined it.  It looked terrible.  I didn’t know what I was doing.  And unfortunately, there aren’t any good tutorials about CNC’ing acrylic online.  So I had to play around, do some trial and error.  Eventually I found techniques in CAD, CAM, and CNC that resulted in a decent looking glow plate.</p>
+
+<p><img src="/eflight/img/2019-11-01/3.png" alt="Acrylic" /></p>
+
+<p>In my research I leaned that there are two types of acrylic: extruded and cast.  What I had picked up from the hardware store was extruded acrylic.  It’s of lesser quality and I felt that may have caused some of the imperfections in my work.  It was also quite thin at 5mm.  This is the material used in the prototype image above.</p>
+
+<p>On <a href="https://www.mcmaster.com/acrylic-sheet-stock">McMaster-Carr</a> I found some cast acrylic stock and ordered a 13mm wide sheet.  The result of CNC’ing the cast acrylic was quite a bit nicer and I’m fond of the beefy thickness.</p>
+
+<h4 id="circuitry">Circuitry</h4>
+
+<p>I designed the NiteLite circuit schematic in <a href="https://easyeda.com">EasyEDA</a>.  Compared to previous circuits I’ve designed, this one is pleasantly simple.</p>
+
+<ul>
+  <li>1 Arduino, the brains of the outfit</li>
+  <li>1 OLED screen to display color levels and mode.</li>
+  <li>4 NPN transistors, 3 to control the RGB LED pins and 1 to turn the OLED screen on and off.</li>
+  <li>3 5k potentiometers as knobs to control color brightness</li>
+  <li>2 tactile switches, the buttons to navigate modes</li>
+  <li>1 on/off switch for the 12V power</li>
+  <li>3 10K resistors to work in combination with the potentiometers to divide the 12V down to &lt;5V for the Aurduino anlalog input pins</li>
+  <li>2 4.7k resistors as pullups for I2C comm between Arduino and OLED screen.</li>
+  <li>4 1k resistors to limit current to the transistor bases.</li>
+</ul>
+
+<p><img src="/eflight/img/2019-11-01/4.jpg" alt="Schematic" /></p>
+
+<p>On the prototype, I wired up through-pin components onto a proto-board.  This was time consuming and did not produce the most aesthetic circuit board as you can see in the prototype image above.  For the final product I designed a PCB (printed circuit board) and ordered surface-mount components and better through-hole components.  See below.</p>
+
+<p><img src="/eflight/img/2019-11-01/5.png" alt="PCB" /></p>
+
+<p>I ordered these in a black finish.  See how nice it looks in the last image below.</p>
+
+<h4 id="source-code">Source Code</h4>
+
+<p>On the Arduino you can choose which every programming language you like, so long as it’s C++.  Urg!  Coding in C++ is a drag.</p>
+
+<p>The <a href="https://github.com/slagyr/nitelite">code base is available on Github</a>.  It was developed using TDD (Test Driven Design) so all the code is tested, except for the thin layer that interfaces directly with the Arduino hardware.</p>
+
+<h4 id="tristans-nitelite">Tristan’s NiteLite</h4>
+
+<p>Yesterday, Tristan and I worked on a design for his NiteLite.  He chose the font used on his name and after exploring many options for decorating it, he settled on a symbolic flame.  I printed the base, CNC’ed the glow plate, and put it all together today while he’s at school.  It’s on his night stand waiting for him to find it when he gets home.  I think he’ll like it.</p>
+
+<p><img src="/eflight/img/2019-11-01/6.jpg" alt="Tristan NiteLite" /></p>
+
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Electric Airplane Adventures</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Micah Martin
+            
+            </li>
+            
+            <li><a href="mailto:micahmartin@gmail.com">micahmartin@gmail.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/slagyr"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">slagyr</span></a>
+
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/slagyr"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">slagyr</span></a>
+
+          </li>
+          
+          <li><a href="/feed.xml">RSS feed</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>My adventures in building electric airplanes.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
